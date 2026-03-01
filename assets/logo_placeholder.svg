@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="140" viewBox="0 0 220 140">
+<rect x="1" y="1" width="218" height="138" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+<path d="M40 96c18-28 36-42 70-42s52 14 70 42" fill="none" stroke="#94a3b8" stroke-width="8" stroke-linecap="round"/>
+<circle cx="110" cy="60" r="16" fill="#cbd5e1"/>
+<text x="110" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Logo manquant</text>
+</svg>
