@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carte des clubs – Pays de la Loire</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img class="crLogo" src="assets/logo_cr_pdl.png" alt="CR PDL"/>
+      <div class="dot"></div>
+      <div>
+        <div class="title">Clubs de tir à l'arc – Pays de la Loire</div>
+       
+      </div>
+    </div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Rechercher un club ou une ville…" />
+      <label class="chk"><input id="onlyYouth" type="checkbox" /><span>Jeunes ≥ 30%</span></label>
+      <label class="select"><span>Département</span>
+        <select id="dept"></select>
+      </label>
+      <label class="select"><span>Pratique</span>
+        <select id="practice"></select>
+      </label>
+      <label class="chk"><input id="onlyRef" type="checkbox" /><span>Avec arbitre</span></label>
+      <button id="reset" class="btn">Réinitialiser</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="map"></section>
+    <aside class="side">
+      <div class="card hero">
+        <div class="cardTitle">Affichage</div>
+        <div class="seg" role="tablist" aria-label="Mode d'affichage">
+          <button class="segBtn active" data-mode="licences" id="mode">Licenciés</button>
+          <button class="segBtn" data-mode="femmes">% Femmes</button>
+          <button class="segBtn" data-mode="para">% archers Para</button>
+          <button class="segBtn" data-mode="jcomp"> Jeunes compétiteur en %</button>
+        </div>
+        <div class="legend" id="legend"></div>
+<label class="toggle"><input type="checkbox" id="clusterToggle" checked />
+<span>Regrouper les points</span></label>
+      </div>
+
+      <div class="card">
+        <div class="cardTitle">Statistiques (clubs affichés)</div>
+        <div id="stats" class="stats"></div>
+      </div>
+      <div class="card">
+        <div class="cardTitle">Liste (cliquable)</div>
+        <div id="list" class="list"></div>
+      </div>
+      <div class="card subtle">
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+ </script>
+  <script src="app.js"></script>
+</body>
+</html>
