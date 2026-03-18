@@ -352,7 +352,7 @@ function applyFilters(){
 
 async function main(){
   initMap();
-  const res = await fetch("./data/clubs.json");
+  const res = await fetch("./clubs.json");
   clubs = await res.json();
   filtered = clubs.slice();
 
