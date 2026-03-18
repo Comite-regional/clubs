@@ -42,6 +42,7 @@ function colorLerp(c1,c2,t){
   const bl=Math.round(lerp(a[2],b[2],t));
   return `rgb(${r},${g},${bl})`;
 }
+
 function recomputeScale(){
   if(displayMode==="licences"){ modeScale = {min:0, max:0}; return; }
   const vals = filtered.map(valueForMode).filter(v => Number.isFinite(v));
@@ -58,6 +59,7 @@ function valueForMode(c){
   if(displayMode==="jcomp") return Number(c.pct_jeunes_competiteurs_18m||0);
   return Number(c.licences_total||0);
 }
+
 function colorForMode(c){
   if(displayMode==="licences") return "#2563eb";
   const v=valueForMode(c);
@@ -69,6 +71,7 @@ function colorForMode(c){
   const high="a855f7";
   return t<0.5 ? colorLerp(low, mid, t*2) : colorLerp(mid, high, (t-0.5)*2);
 }
+
 function legendHtml(){
   if(!elLegend) return;
   if(displayMode==="licences"){
@@ -234,13 +237,38 @@ function markerForClub(c){
 
 function itemHtml(c){
   return `
-    <button class="clubItem" data-id="${esc(c.code_structure)}">
-      <div>
-        <div class="clubName">${esc(c.nom)}</div>
-        <div class="clubMeta">${esc(c.departement || "")} • ${Number(c.licences_total||0)} licenciés</div>
+    <button class="clubItem" data-id="${esc(c.code_structure)}" style="
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border:none;
+      border-radius:12px;
+      margin-bottom:8px;
+      background:rgba(255,255,255,0.92);
+      color:#0f172a;
+      cursor:pointer;
+      text-align:left;
+    ">
+      <div style="min-width:0;">
+        <div style="font-weight:800;font-size:13px;line-height:1.2;">
+          ${esc(c.nom)}
+        </div>
+        <div style="font-size:12px;color:#475569;margin-top:2px;">
+          ${esc(c.departement || "")}
+        </div>
       </div>
-      <div class="clubRight">
-        ${c.a_arbitre ? `<span class="miniBadge">Arbitre</span>` : ""}
+
+      <div style="
+        flex:0 0 auto;
+        font-weight:800;
+        font-size:14px;
+        color:#1d4ed8;
+        white-space:nowrap;
+      ">
+        ${Number(c.licences_total || 0)}
       </div>
     </button>`;
 }
@@ -250,11 +278,26 @@ function statsHtml(list){
   const totalLic = list.reduce((s,c)=>s + Number(c.licences_total||0), 0);
   const avgF = nb ? list.reduce((s,c)=>s + Number(c.pct_femmes||0), 0)/nb : 0;
   const avgP = nb ? list.reduce((s,c)=>s + Number(c.pct_para||0), 0)/nb : 0;
+
   return `
-    <div class="stat"><span>Clubs</span><strong>${nb}</strong></div>
-    <div class="stat"><span>Licenciés</span><strong>${totalLic}</strong></div>
-    <div class="stat"><span>% femmes (moy.)</span><strong>${avgF.toFixed(1)}%</strong></div>
-    <div class="stat"><span>% para (moy.)</span><strong>${avgP.toFixed(1)}%</strong></div>`;
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <div style="font-size:13px;opacity:.9;">Clubs</div>
+        <div style="font-size:20px;font-weight:800;">${nb}</div>
+      </div>
+      <div>
+        <div style="font-size:13px;opacity:.9;">Licenciés</div>
+        <div style="font-size:20px;font-weight:800;">${totalLic}</div>
+      </div>
+      <div>
+        <div style="font-size:13px;opacity:.9;">% femmes (moy.)</div>
+        <div style="font-size:20px;font-weight:800;">${avgF.toFixed(1)}%</div>
+      </div>
+      <div>
+        <div style="font-size:13px;opacity:.9;">% para (moy.)</div>
+        <div style="font-size:20px;font-weight:800;">${avgP.toFixed(1)}%</div>
+      </div>
+    </div>`;
 }
 
 function syncDeptAndPracticeOptions(){
@@ -316,19 +359,28 @@ function renderMarkers(){
 }
 
 function renderList(){
-  elList.innerHTML = filtered.map(itemHtml).join("");
+  const topClubs = filtered
+    .slice()
+    .sort((a,b) => Number(b.licences_total || 0) - Number(a.licences_total || 0))
+    .slice(0, 15);
+
+  elList.innerHTML = topClubs.map(itemHtml).join("");
+
   elList.querySelectorAll(".clubItem").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.id;
       const c = filtered.find(x => String(x.code_structure) === String(id));
       if(!c) return;
+
       map.setView([c.lat, c.lng], 11);
+
       setTimeout(() => {
-        const popup = L.popup({maxWidth:430})
+        L.popup({maxWidth:430})
           .setLatLng([c.lat, c.lng])
           .setContent(makePopupHtml(c))
           .openOn(map);
       }, 120);
+
       if(window.innerWidth < 1024){
         elSidebar.classList.remove("open");
         elOverlay.classList.remove("show");
@@ -417,6 +469,7 @@ function initUI(){
       elOverlay.classList.toggle("show");
     });
   }
+
   if(elOverlay){
     elOverlay.addEventListener("click", () => {
       elSidebar.classList.remove("open");
