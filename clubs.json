@@ -17,27 +17,11 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "CQP Animateur Tir à l'Arc",
-        "nb": 1
-      },
-      {
-        "niveau": "DEJEPS",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
         "nb": 1
       }
     ],
@@ -62,59 +46,30 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 2,
     "president": "Mme BOQUET MELANIE",
-    "entraineurs": [
-      {
-        "nom": "Franck Cadoret",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "DEJEPS"
-        ],
-        "diplome_principal": "DEJEPS"
-      },
-      {
-        "nom": "GENEVIEVE Touzet",
-        "diplomes": [
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      },
-      {
-        "nom": "Thomas Rondineau",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Beatrice Touzet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "FOIGNY Maëllys",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "GENEVIEVE Touzet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "TOUZET Beatrice",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Maëllys Foigny",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "TOUZET Genevieve",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "RONDINEAU Thomas",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "TOUZET Genevieve",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -140,19 +95,11 @@
         "nb": 2
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
+        "niveau": "Encadrant Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 1
       }
     ],
@@ -183,52 +130,42 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 5,
     "president": "M AGOSTINI Jules",
-    "entraineurs": [
-      {
-        "nom": "Gwenaelle Thepault",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "JEAN-PHILIPPE Bosman",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "CHRISTIAN Le Bars",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "LE BARS Christian",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "GILLES Vaillant",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "SABATTIER Pierre",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Pierre Sabattier",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "VAILLANT Gilles",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BEAUVILLAIN Yves",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BOSMAN Jean-Philippe",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "MECHTI Walid",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "ROY Olivier",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "THEPAULT Gwenaelle",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -250,40 +187,12 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Assistant Entraîneur",
+        "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
         "niveau": "Entraîneur 1",
         "nb": 3
-      },
-      {
-        "niveau": "Entraîneur Fédéral",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 2
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 3
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
       }
     ],
     "nb_femmes": 28,
@@ -307,73 +216,34 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 5,
+    "nb_entraineurs": 4,
     "president": "M GUIET PHILIPPE",
-    "entraineurs": [
-      {
-        "nom": "Davia Labarre",
-        "diplomes": [
-          "Assistant Entraîneur",
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Fanch Cherhal",
-        "diplomes": [
-          "Entraîneur 1",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Kevin Delaporte",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "PATRICK Naud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Poussins",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      },
-      {
-        "nom": "SANDRA Naud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur",
-          "Poussins"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Laurent Ercolino",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "ERCOLINO Laurent",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Pierrick Monnet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "MONNET Pierrick",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CHERHAL Fanch",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "LABARRE Davia",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "NAUD Patrick",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "NAUD Sandra",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -399,15 +269,7 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       }
     ],
@@ -434,28 +296,22 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 2,
     "president": "M NAUD Bernard",
-    "entraineurs": [
-      {
-        "nom": "Bernard Naud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "EDITH Le Roch",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "LE ROCH Edith",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOUTOLLEAU Gerald",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "NAUD Bernard",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -481,8 +337,8 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
       }
     ],
     "nb_femmes": 14,
@@ -508,19 +364,27 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 4,
     "president": "Mme MARTIN Murielle",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Mathieu Martin",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
+        "nom": "LE ROUX Dorian",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MARTIN Brivaël",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MARTIN Mathieu",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "MARTIN Murielle",
+        "diplome": "Encadrant Fédéral"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244006,
@@ -560,8 +424,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M ROQUES Benoit-Alfred",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1244008,
@@ -585,20 +449,8 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 2
       }
     ],
     "nb_femmes": 22,
@@ -622,36 +474,30 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 3,
     "president": "M TENAILLEAU Gael",
-    "entraineurs": [
-      {
-        "nom": "Patrick Bernard-Drouet",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Gael Tenailleau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "ANGEBAUD Romain",
+        "niveau": "Jeune Arbitre"
       },
       {
-        "nom": "Romain Angebaud",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "TENAILLEAU Gael",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "ANGEBAUD Nicolas",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BERNARD-DROUET Patrick",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "TETREL Julien",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -673,14 +519,6 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
       },
@@ -689,15 +527,15 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
+        "niveau": "Encadrant Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Test pré-requis",
+        "niveau": "Assistant Entraîneur",
+        "nb": 1
+      },
+      {
+        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -730,78 +568,50 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 6,
     "president": "M LE GUE Ioan",
-    "entraineurs": [
-      {
-        "nom": "DAMIEN Letulle",
-        "diplomes": [
-          "BEES 1"
-        ],
-        "diplome_principal": "BEES 1"
-      },
-      {
-        "nom": "Ioan Le Gue",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Jean Luc Bouchart",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Alexandra Jobert",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "BOUCHART Jean Luc",
+        "niveau": "Arbitre Formateur"
       },
       {
-        "nom": "Bernard Leroux",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Compétence Run Archery",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "BUSSONNIERE Fabian",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Fabian Bussonniere",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "JOBERT Alexandra",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Jean Luc Bouchart",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "LEROUX Bernard",
+        "niveau": "Arbitre Formateur"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOUCHART Jean Luc",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "CHAUVOT Valerie",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "FONVIELLE Charles-Antoine",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "HENIN Sylvie",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LE GUE Ioan",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "PERROT Joel",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -821,7 +631,16 @@
     "pourcentage_jeunes": 11.9,
     "nb_arbitres": 2,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "DEJEPS",
+        "nb": 1
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 7,
     "nb_hommes": 35,
     "nb_para": 0,
@@ -843,24 +662,26 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 2,
     "president": "M CADORET ROMUALD",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Ghislain Baudichaud",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "BAUDICHAUD Ghislain",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "RENE Lorent",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "LORENT Rene",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CADORET Franck",
+        "diplome": "DEJEPS"
+      },
+      {
+        "nom": "CADORET Romuald",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -884,22 +705,6 @@
       {
         "niveau": "Entraîneur 1",
         "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Sport Santé Bien-être",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
       }
     ],
     "nb_femmes": 16,
@@ -923,30 +728,15 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 1,
     "president": "M ARNAUD Julien",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Bruno Geffroy",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Sport Santé Bien-être",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "KEVIN Etourneau",
-        "diplomes": [
-          "Formation continue Diverses Apprentissage",
-          "Poussins",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Test pré-requis"
+        "nom": "GEFFROY Bruno",
+        "diplome": "Entraîneur 1"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244012,
@@ -966,19 +756,15 @@
     "a_arbitre": false,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
+        "niveau": "Entraîneur Club",
         "nb": 1
       },
       {
-        "niveau": "Test pré-requis",
+        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -1007,21 +793,23 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 3,
     "president": "M CANTAT PATRICK",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Pascal Lemoigne",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
+        "nom": "LEMOIGNE Pascal",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "PILARD Alexandra",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "SIMAILLEAU Jocelyn",
+        "diplome": "Initiateur"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244013,
@@ -1040,14 +828,6 @@
     "nb_arbitres": 1,
     "a_arbitre": true,
     "niveaux_entraineurs": [
-      {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
       {
         "niveau": "Initiateur",
         "nb": 1
@@ -1076,25 +856,16 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "Mme BRENOT Delphine",
-    "entraineurs": [
-      {
-        "nom": "Matthieu Relet",
-        "diplomes": [
-          "BEES 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "BEES 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Maxence Massion",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "MASSION Maxence",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "RELET Matthieu",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -1117,18 +888,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 1
       }
     ],
@@ -1153,26 +912,16 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M LEBOUC Andre",
-    "entraineurs": [
-      {
-        "nom": "Salim El Kouri",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Andre Lebouc",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "LEBOUC Andre",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "EL KOURI Salim",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -1219,16 +968,13 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M GAILLET NICOLAS",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "YANNICK Wolka",
-        "diplomes": [
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
+        "nom": "WOLKA Yannick",
+        "diplome": "Initiateur"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244017,
@@ -1246,7 +992,12 @@
     "pourcentage_jeunes": 23.8,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 18,
     "nb_hommes": 24,
     "nb_para": 0,
@@ -1266,10 +1017,15 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M ROBERT CYRIL",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "PETITJEAN Didier",
+        "diplome": "Initiateur"
+      }
+    ]
   },
   {
     "code_structure": 1244018,
@@ -1287,7 +1043,16 @@
     "pourcentage_jeunes": 16.0,
     "nb_arbitres": 3,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 2
+      }
+    ],
     "nb_femmes": 14,
     "nb_hommes": 36,
     "nb_para": 0,
@@ -1307,31 +1072,46 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 6,
     "president": "M DEPEYRE PASCAL",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "PASCAL Depeyre",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "DEPEYRE Pascal",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Sylvain Depeyre",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "DEPEYRE Sylvain",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Teilo Le Guen",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "LE GUEN Teilo",
+        "niveau": "Jeune Arbitre"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BELLOIR Alain",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "BOUTIN Laurent",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DEPEYRE Pascal",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DEPEYRE Sylvain",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "NOVERRAZ Samuel",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "RICHOU Bernard",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -1351,7 +1131,12 @@
     "pourcentage_jeunes": 22.6,
     "nb_arbitres": 2,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 11,
     "nb_hommes": 20,
     "nb_para": 1,
@@ -1371,26 +1156,22 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M GUIBERT GREGORY",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Anya Guibert",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Jeune Arbitre - Examen - Cibles",
-          "Jeune Arbitre - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "GUIBERT Anya",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "GREGORY Guibert",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "GUIBERT Gregory",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BONNET Sylvain",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -1410,7 +1191,12 @@
     "pourcentage_jeunes": 25.8,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
+      }
+    ],
     "nb_femmes": 13,
     "nb_hommes": 18,
     "nb_para": 0,
@@ -1436,10 +1222,23 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 3,
     "president": "M BROUSSARD Arnaud",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "BATY Gael",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BROUSSARD Arnaud",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PLESSIS Vincent",
+        "diplome": "Encadrant Fédéral"
+      }
+    ]
   },
   {
     "code_structure": 1244022,
@@ -1457,7 +1256,16 @@
     "pourcentage_jeunes": 8.1,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Entraîneur Club",
+        "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      }
+    ],
     "nb_femmes": 11,
     "nb_hommes": 26,
     "nb_para": 1,
@@ -1479,16 +1287,34 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 5,
     "president": "M BURON Marc",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "REDWENE Haddou",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "HADDOU Redwene",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BEAUDOUIN Pascal",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BEAUGE Gerard",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "LE VAILLANT Stephanie",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LERAY Gilles",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MENANDAIS Frederique",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -1514,16 +1340,8 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Assistant Entraîneur",
+        "nb": 3
       }
     ],
     "nb_femmes": 27,
@@ -1549,34 +1367,34 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 4,
     "president": "M ROY THIERRY",
-    "entraineurs": [
-      {
-        "nom": "Francis Gerbaud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Patrice Chaillou",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "CHAILLOU Patrice",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Romain Guemene",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "GUEMENE Romain",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GERBAUD Francis",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PERRAY Katia",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "PERRAY Yannick",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "ROBERT Dominique",
+        "diplome": "Assistant Entraîneur"
       }
     ]
   },
@@ -1598,35 +1416,15 @@
     "a_arbitre": false,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Arc nu",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
       },
       {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
         "nb": 1
       }
     ],
@@ -1651,31 +1449,35 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 6,
     "president": "M MARCHAND Alexis",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Jean-Marie Bonnand",
-        "diplomes": [
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur",
-          "Poussins"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
+        "nom": "ARCHER Antoine",
+        "diplome": "Encadrant Fédéral"
       },
       {
-        "nom": "PATRICK Labat",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur Fédéral",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
+        "nom": "BONNAND Jean-Marie",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "LABAT Patrick",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "LANCELEUR Remi",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MARCHAND Alexis",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "RADIGOIS Martin",
+        "diplome": "Encadrant Fédéral"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244027,
@@ -1717,25 +1519,17 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M RENAUD ROMAIN",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Dylan Ouairy",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "OUAIRY Dylan",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "ROMAIN Renaud",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "RENAUD Romain",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1244028,
@@ -1751,9 +1545,26 @@
     "logo_url": "logos/club_1244028.png",
     "licences_total": 51,
     "pourcentage_jeunes": 17.6,
-    "nb_arbitres": 2,
+    "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "CQP Animateur Tir à l'Arc",
+        "nb": 1
+      },
+      {
+        "niveau": "Entraîneur Club",
+        "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 2
+      }
+    ],
     "nb_femmes": 17,
     "nb_hommes": 34,
     "nb_para": 0,
@@ -1777,24 +1588,34 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 5,
     "president": "M DUAULT PASCAL",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "PASCAL Duault",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "DUAULT Pascal",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "LE BAIL Jeanyves",
+        "diplome": "Initiateur"
       },
       {
-        "nom": "Yann Roussel",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "PIQUET Jean-Pierre",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "PORTAL Muriel",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "ROUSSEL Yann",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "VIAUD Bertrand",
+        "diplome": "Entraîneur Club"
       }
     ]
   },
@@ -1817,14 +1638,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Arc nu",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
         "nb": 1
       }
     ],
@@ -1859,27 +1672,15 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 1,
     "president": "M BOMPOIL NICOLAS",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "NICOLAS Bompoil",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "SERGE Moriceau",
-        "diplomes": [
-          "Formation continue Arc nu"
-        ],
-        "diplome_principal": "Formation continue Arc nu"
+        "nom": "BOMPOIL Nicolas",
+        "diplome": "Entraîneur 1"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1244031,
@@ -1925,25 +1726,17 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M TEILLET Sylvain",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Alex Guerry",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "GUERRY Alex",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "XAVIER Livernais",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "LIVERNAIS Xavier",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1244035,
@@ -1963,8 +1756,20 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
+        "niveau": "CQP Animateur Tir à l'Arc",
+        "nb": 1
+      },
+      {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 2
       }
     ],
     "nb_femmes": 13,
@@ -1992,50 +1797,58 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 8,
     "president": "M COMMUNAL Philippe",
-    "entraineurs": [
-      {
-        "nom": "Thierry Groseil",
-        "diplomes": [
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Emma Marrazzu",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "COMMUNAL Philippe",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Jerome Lefeuvre",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "CRUSSON Luc",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Luc Crusson",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Jeune Arbitre - Examen - Cibles",
-          "Jeune Arbitre - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "LEFEUVRE Jerome",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Philippe Communal",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "MARRAZZU Emma",
+        "niveau": "Jeune Arbitre"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BENOIT Celine",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COMMUNAL Florian",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "CRUSSON Leo",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "CRUSSON Sebastien",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "GROSEIL Thierry",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "LEFEUVRE Jerome",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "LEVEILLE Cynthia",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "ROULIN Didier",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -2085,17 +1898,13 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M JUBE Benjamin",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "JORDANE Campfort",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "CAMPFORT Jordane",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1244041,
@@ -2113,7 +1922,24 @@
     "pourcentage_jeunes": 17.6,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Entraîneur Club",
+        "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 5
+      },
+      {
+        "niveau": "Assistant Entraîneur",
+        "nb": 1
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 3
+      }
+    ],
     "nb_femmes": 27,
     "nb_hommes": 58,
     "nb_para": 4,
@@ -2137,20 +1963,54 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 10,
     "president": "Mme ROBIN Martine",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Thierry Piveteau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "PIVETEAU Thierry",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BULTEAU Alain",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "CACHET Vladimir",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COLLIN Yves",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "DENIS James",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "FIMBEL Philippe",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "GRANVILLIERS Laurent",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "LEBERRE Jean",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "PIVETEAU Thierry",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "SOULARD Noah",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "TIGNER Pierre",
+        "diplome": "Assistant Entraîneur"
       }
     ]
   },
@@ -2172,11 +2032,15 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Encadrant fédéral",
+        "niveau": "Entraîneur Fédéral",
+        "nb": 2
+      },
+      {
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       },
       {
-        "niveau": "Entraîneur Fédéral",
+        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -2203,54 +2067,38 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 4,
     "president": "Mme QUILY Floriane",
-    "entraineurs": [
-      {
-        "nom": "Dylan Araud",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Camille Bescond Raballand",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "BESCOND RABALLAND Camille",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Virginie Ventroux",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Compétence Run Archery",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun",
-          "Arbitre National - Tir en Campagne"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "RELANDEAU Xavier",
+        "niveau": "Arbitre Formateur"
       },
       {
-        "nom": "Xavier Relandeau",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Compétence Run Archery",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "VENTROUX Virginie",
+        "niveau": "Arbitre Formateur"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "ARAUD Dylan",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "DELAPORTE Kevin",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "QUILY Floriane",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "RELANDEAU Xavier",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -2272,10 +2120,6 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 2
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
       },
@@ -2284,23 +2128,11 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Initiateur",
+        "niveau": "Entraîneur 1",
         "nb": 1
       },
       {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       }
     ],
@@ -2333,65 +2165,34 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 4,
     "president": "M QUEMENER Damien",
-    "entraineurs": [
-      {
-        "nom": "BERNARD Hercelin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "DOMINIQUE Saliou",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      },
-      {
-        "nom": "Damien Quemener",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "BERNARD Hercelin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "HERCELIN Bernard",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "DOMINIQUE Saliou",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Compétence Run Archery",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun",
-          "Arbitre National - Initial - Cibles Anglaises"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "SALIOU Dominique",
+        "niveau": "Arbitre Formateur"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "HERCELIN Bernard",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "QUEMENER Damien",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "SALIOU Dominique",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "VERONNEAU Frederic",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -2413,10 +2214,6 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 2
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
       },
@@ -2425,19 +2222,7 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Entraîneur 1",
         "nb": 1
       }
     ],
@@ -2470,52 +2255,28 @@
     "discipline_principale": null,
     "nb_entraineurs": 3,
     "president": "M LE ROCH ANDRE",
-    "entraineurs": [
-      {
-        "nom": "Arnaud Content",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      },
-      {
-        "nom": "Henri Renaudineau",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "THIERRY Loirat",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Patrick Provain",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "PONSODA Stephane",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Stephane Ponsoda",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "PROVAIN Patrick",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CONTENT Arnaud",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "LOIRAT Thierry",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "RENAUDINEAU Henri",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -2535,7 +2296,12 @@
     "pourcentage_jeunes": 23.1,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 3,
     "nb_hommes": 10,
     "nb_para": 0,
@@ -2555,10 +2321,15 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M CARRE JOHANN",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "CARRE Johann",
+        "diplome": "Encadrant Fédéral"
+      }
+    ]
   },
   {
     "code_structure": 1249047,
@@ -2578,27 +2349,11 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 2
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 3
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 4
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 4
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Entraîneur 1",
         "nb": 2
       }
     ],
@@ -2627,74 +2382,36 @@
     "discipline_principale": null,
     "nb_entraineurs": 5,
     "president": "M GLEMET ERIC",
-    "entraineurs": [
-      {
-        "nom": "Benjamin Sorin",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "ERIC Glemet",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Michael Josse",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Philippe Pasquier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Samuel Thomas",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "ANNABELLE Trimaud",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "MOSSET Nicolas",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Nicolas Mosset",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "TRIMAUD Annabelle",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GLEMET Eric",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "JOSSE Michael",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "PASQUIER Philippe",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "SORIN Benjamin",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "THOMAS Samuel",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -2712,7 +2429,7 @@
     "logo_url": "logos/club_1249049.png",
     "licences_total": 100,
     "pourcentage_jeunes": 22.0,
-    "nb_arbitres": 2,
+    "nb_arbitres": 1,
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
@@ -2720,31 +2437,11 @@
         "nb": 3
       },
       {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 6
       },
       {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Sport Santé Bien-être",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 1
       }
     ],
@@ -2773,55 +2470,54 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 10,
     "president": "Mme PANTAIS Emilie",
-    "entraineurs": [
-      {
-        "nom": "Emilie Pantais",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      },
-      {
-        "nom": "Jeremy Blanche",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Initiateur",
-          "Sport Santé Bien-être"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "MICHEL Boutreux",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Fabrice Gouin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "GOUIN Fabrice",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BLANCHE Jeremy",
+        "diplome": "Entraîneur 1"
       },
       {
-        "nom": "Pierre Olivier",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "BOUTREUX Michel",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "BRAULT Clarisse",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BRAULT Clemence",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BRAULT Pascal",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "JOLIVET Pascal",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MOUNIER Christelle",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "OLIVIER Pierre",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "PANTAIS Emilie",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "SUZANNE Jean Yves",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -2843,20 +2539,8 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "CQP Animateur Tir à l'Arc",
-        "nb": 1
-      },
-      {
         "niveau": "DEJEPS",
         "nb": 1
-      },
-      {
-        "niveau": "Encadrant fédéral",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur 1",
-        "nb": 2
       },
       {
         "niveau": "Entraîneur 2",
@@ -2867,27 +2551,15 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
+        "niveau": "Entraîneur 1",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 5
       },
       {
-        "niveau": "Module PARA tir à l'arc",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 3
-      },
-      {
-        "niveau": "Tir à l'arc sur Ordonnance",
+        "niveau": "Assistant Entraîneur",
         "nb": 1
       }
     ],
@@ -2918,68 +2590,58 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 4,
+    "nb_entraineurs": 10,
     "president": "M GARNIER Alexis",
-    "entraineurs": [
-      {
-        "nom": "FABRICE Corbez",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Module PARA tir à l'arc",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      },
-      {
-        "nom": "Pauline Corbez",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "ROLAND Poirier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "STEPHANE Airaud",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "DEJEPS",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis",
-          "Tir à l'arc sur Ordonnance"
-        ],
-        "diplome_principal": "DEJEPS"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "FABRICE Corbez",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "CORBEZ Fabrice",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Laetitia Guillon",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "GUILLON Laetitia",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "AIRAUD Stephane",
+        "diplome": "DEJEPS"
+      },
+      {
+        "nom": "CHARRE Isabelle",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "CORBEZ Fabrice",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "CORBEZ Pauline",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "GUILLON Laetitia",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LEFORT Gabriel",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MONCANIS Lisa",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PINEAU Samantha",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "POIRIER Roland",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PRANEUF Cindy",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -3021,17 +2683,13 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M ROBET CHRISTOPHE",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Jean-Yves Defois",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "DEFOIS Jean-Yves",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1249054,
@@ -3051,11 +2709,7 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Encadrant fédéral",
+        "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
@@ -3067,27 +2721,7 @@
         "nb": 1
       },
       {
-        "niveau": "Entraîneur Fédéral",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Module PARA tir à l'arc",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       }
     ],
@@ -3116,76 +2750,38 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 5,
+    "nb_entraineurs": 4,
     "president": "M FERAND Alexandre",
-    "entraineurs": [
-      {
-        "nom": "CAROLINE Coutolleau",
-        "diplomes": [
-          "BEES 1",
-          "Entraîneur Club"
-        ],
-        "diplome_principal": "BEES 1"
-      },
-      {
-        "nom": "Herve Templeraud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Nicolas Jarry",
-        "diplomes": [
-          "Formation continue Diverses Entrainement",
-          "Poussins"
-        ],
-        "diplome_principal": "Poussins"
-      },
-      {
-        "nom": "Olivier Bourreau",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Sandrine Templeraud",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Module PARA tir à l'arc"
-        ],
-        "diplome_principal": "Encadrant fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Alexandre Ferand",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "BOURREAU Olivier",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "CAROLINE Coutolleau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "COUTOLLEAU Caroline",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Olivier Bourreau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "FERAND Alexandre",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOURREAU Olivier",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "COUTOLLEAU Caroline",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "TEMPLERAUD Herve",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "TEMPLERAUD Sandrine",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -3203,36 +2799,24 @@
     "logo_url": "logos/club_1249056.png",
     "licences_total": 138,
     "pourcentage_jeunes": 12.3,
-    "nb_arbitres": 2,
+    "nb_arbitres": 1,
     "a_arbitre": true,
     "niveaux_entraineurs": [
-      {
-        "niveau": "Entraîneur 1",
-        "nb": 4
-      },
       {
         "niveau": "Entraîneur Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
+        "niveau": "Entraîneur 1",
         "nb": 4
       },
       {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 2
+        "niveau": "Encadrant Fédéral",
+        "nb": 5
       },
       {
         "niveau": "Initiateur",
-        "nb": 3
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "nb": 2
       }
     ],
     "nb_femmes": 35,
@@ -3262,78 +2846,66 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 6,
+    "nb_entraineurs": 13,
     "president": "M BEN AMAR Eric",
-    "entraineurs": [
-      {
-        "nom": "Eric Ben Amar",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Tir en campagne"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "FREDERIC Lefebvre",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Helene Berthet",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Poussins",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "JEROME Acher Dubois",
-        "diplomes": [
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Jean Paul Lopez",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "YVES Faucheux",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Helene Berthet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "BERTHET Helene",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "ACHER DUBOIS Jerome",
+        "diplome": "Entraîneur Fédéral"
       },
       {
-        "nom": "OLIVIER Tremblin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "BARRAULT Marie-Line",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "BEN AMAR Eric",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "BERTHET Helene",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "CALBRY Philippe",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DOCQUOIS Nathan",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DROCHON Benoit",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "FAUCHEUX Yves",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "KERISOUET Audrey",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LEFEBVRE Frederic",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "LEGUERE Stephane",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LOPEZ Jean Paul",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PEREZ Pierre-Francois",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -3359,28 +2931,8 @@
         "nb": 4
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 4
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
-      },
-      {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
+        "nb": 3
       }
     ],
     "nb_femmes": 26,
@@ -3402,90 +2954,54 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 4,
+    "nb_entraineurs": 7,
     "president": "M PELTIER Michael",
-    "entraineurs": [
-      {
-        "nom": "FRANCOISE Floch",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "JEAN PIERRE Piton",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "MONIQUE Piton",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Michael Peltier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Alain Jalladeau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "CAMENEN Marie Helene",
+        "niveau": "Arbitre Formateur"
       },
       {
-        "nom": "FRANCOISE Floch",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "DURAND Olivier",
+        "niveau": "Arbitre Formateur"
       },
       {
-        "nom": "Marie Helene Camenen",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "FLOCH Francoise",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "OLIVIER Durand",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "JALLADEAU Alain",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CAMENEN Marie Helene",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "CHATELAIN Jean-Paul",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "FLOCH Francoise",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "MONTAUDON Eric",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "PELTIER Michael",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PITON Jean Pierre",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PITON Monique",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -3508,27 +3024,11 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
         "nb": 2
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
       },
       {
         "niveau": "Initiateur",
         "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
       }
     ],
     "nb_femmes": 19,
@@ -3552,71 +3052,36 @@
     "discipline_principale": null,
     "nb_entraineurs": 3,
     "president": "M LE GOFF Laurent",
-    "entraineurs": [
-      {
-        "nom": "Gilles Ollivier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Guillaume Brin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "JEROME Devanne",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "BASTIEN Coutant",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "BRIN Guillaume",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Guillaume Brin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "BRIN Veronique",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Lilian Landreau",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "COUTANT Bastien",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Veronique Brin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "LANDREAU Lilian",
+        "niveau": "Jeune Arbitre"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BRIN Guillaume",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "CAMBOT Florian",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "OLLIVIER Gilles",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -3658,8 +3123,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M MUSSAULT BENOIT",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1249061,
@@ -3703,8 +3168,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M GOURDON Eric",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1249062,
@@ -3722,7 +3187,12 @@
     "pourcentage_jeunes": 33.3,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 4,
     "nb_hommes": 11,
     "nb_para": 0,
@@ -3742,10 +3212,15 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M ROLLET Christophe",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "COTTIER Christian",
+        "diplome": "Initiateur"
+      }
+    ]
   },
   {
     "code_structure": 1249063,
@@ -3785,8 +3260,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "Mme TRAVERT NATHALIE",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1249065,
@@ -3826,8 +3301,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "Mme CARON Sandie",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1249066,
@@ -3847,36 +3322,16 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Animateur d'été",
-        "nb": 1
-      },
-      {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
-      },
-      {
-        "niveau": "Entraîneur Club",
-        "nb": 2
       },
       {
         "niveau": "Entraîneur Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Formation continue Arc nu",
+        "niveau": "Entraîneur Club",
         "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
       },
       {
         "niveau": "Initiateur",
@@ -3910,99 +3365,52 @@
     "discipline_principale": null,
     "nb_entraineurs": 7,
     "president": "M MARTIN PATRICK",
-    "entraineurs": [
-      {
-        "nom": "Andre Bourgat",
-        "diplomes": [
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      },
-      {
-        "nom": "FREDERIC Geru",
-        "diplomes": [
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      },
-      {
-        "nom": "Frederic Robin",
-        "diplomes": [
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      },
-      {
-        "nom": "Gerard Hercheux",
-        "diplomes": [
-          "Animateur d'été",
-          "BEES 1",
-          "Entraîneur Club"
-        ],
-        "diplome_principal": "BEES 1"
-      },
-      {
-        "nom": "Laurent Bataille",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Loic Louarn",
-        "diplomes": [
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "PATRICK Bresson",
-        "diplomes": [
-          "Entraîneur 2",
-          "Entraîneur Club",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Andre Bourgat",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "BOURGAT Andre",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Michel Lesueur",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "LESUEUR Michel",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "PATRICK Martin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "LESUEUR Sylvie",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Sylvie Lesueur",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "MARTIN Patrick",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BATAILLE Laurent",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "BOURGAT Andre",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "BRESSON Patrick",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "GERU Frederic",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "HERCHEUX Gerard",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "LOUARN Loic",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "ROBIN Frederic",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -4046,18 +3454,13 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M LEFAUX Mickael",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Jean-Marc Maqueda",
-        "qualifications": [
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Initiale"
+        "nom": "MAQUEDA Jean-Marc",
+        "niveau": "Arbitre Formateur"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1249068,
@@ -4107,30 +3510,17 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M DUPUIS Jean-Paul",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Jean-Paul Dupuis",
-        "qualifications": [
-          "Arbitre Formateur - Continue",
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Continue"
+        "nom": "DUPUIS Jean-Paul",
+        "niveau": "Arbitre Formateur"
       },
       {
-        "nom": "Michel Flament",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "FLAMENT Michel",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1249071,
@@ -4152,22 +3542,6 @@
       {
         "niveau": "Entraîneur 1",
         "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
       }
     ],
     "nb_femmes": 12,
@@ -4191,29 +3565,17 @@
     "discipline_principale": null,
     "nb_entraineurs": 2,
     "president": "M BONNAUD Mickael",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Marie-Therese Vlaminck",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "BONNAUD Mickael",
+        "diplome": "Entraîneur 1"
       },
       {
-        "nom": "Mickael Bonnaud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "VLAMINCK Marie-Therese",
+        "diplome": "Entraîneur 1"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1249140,
@@ -4259,17 +3621,13 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M BELLICAUD Jean-Claude",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Jean-Claude Bellicaud",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "BELLICAUD Jean-Claude",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   },
   {
     "code_structure": 1253072,
@@ -4293,19 +3651,11 @@
         "nb": 3
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Initiateur",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       },
       {
-        "niveau": "Test pré-requis",
+        "niveau": "Assistant Entraîneur",
         "nb": 2
       }
     ],
@@ -4328,41 +3678,35 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 6,
     "president": "M BESNARD Cyril",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Alain Colin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "BELLUAU Emmanuel",
+        "diplome": "Assistant Entraîneur"
       },
       {
-        "nom": "Didier Froger",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "BESNARD Cyril",
+        "diplome": "Assistant Entraîneur"
       },
       {
-        "nom": "MARIE-PIERRE Colin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "COLIN Alain",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "COLIN Marie-Pierre",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "FROGER Didier",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "LEVEQUE Guilherme",
+        "diplome": "Encadrant Fédéral"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1253075,
@@ -4382,28 +3726,16 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
+        "niveau": "CQP Animateur Tir à l'Arc",
+        "nb": 2
+      },
+      {
         "niveau": "Entraîneur 1",
         "nb": 3
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 2
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
       }
     ],
     "nb_femmes": 19,
@@ -4429,56 +3761,54 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 9,
     "president": "Mme NAUDIN Aloyse",
-    "entraineurs": [
-      {
-        "nom": "ALBAN Tessier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "GUY Barreau",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "PATRICK Genin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "GUY Barreau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "BARREAU Guy",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "PATRICK Genin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "GENIN Patrick",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BARREAU Guy",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "DOMECQ Baptiste",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DUPUY-SALLE Christophe",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "FAURE Jean-Baptiste",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "GAUDRE Felicie",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "GENIN Patrick",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "RIBEIRO Gwenael",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "SONNET Romain",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "TESSIER Alban",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -4500,28 +3830,12 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "CQP Animateur Tir à l'Arc",
-        "nb": 1
-      },
-      {
         "niveau": "DEJEPS",
         "nb": 1
       },
       {
         "niveau": "Entraîneur 1",
         "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
       }
     ],
     "nb_femmes": 4,
@@ -4547,35 +3861,20 @@
     "discipline_principale": null,
     "nb_entraineurs": 2,
     "president": "M GESBERT Sebastien",
-    "entraineurs": [
-      {
-        "nom": "CYRIL Vanhamme",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "DEJEPS",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "DEJEPS"
-      },
-      {
-        "nom": "Sebastien Gesbert",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "MICHEL Richard",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "RICHARD Michel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GESBERT Sebastien",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "VANHAMME Cyril",
+        "diplome": "DEJEPS"
       }
     ]
   },
@@ -4601,24 +3900,8 @@
         "nb": 3
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 2
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
       }
     ],
     "nb_femmes": 12,
@@ -4646,75 +3929,42 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 4,
     "president": "Mme MORAN STEPHANIE",
-    "entraineurs": [
-      {
-        "nom": "Bernard Brangier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Eric Benoist",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Frederic Genin",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "ANTHONY Sauvage",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "BRANGIER Bernard",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Bernard Brangier",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "COLLET Guillaume",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Florian Herve",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "HERVE Florian",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Guillaume Collet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "SAUVAGE Anthony",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BENOIST Eric",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "BRANGIER Bernard",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "GENIN Frederic",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "HERVE Florian",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -4740,16 +3990,8 @@
         "nb": 1
       },
       {
-        "niveau": "Entraîneur 2",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur Club",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
       }
     ],
     "nb_femmes": 13,
@@ -4781,28 +4023,30 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 4,
     "president": "Mme FOUCHER MOREAU Emilie",
-    "entraineurs": [
-      {
-        "nom": "ERIC Salmon",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "Entraîneur 2",
-          "Entraîneur Club",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "CQP Animateur Tir à l'Arc"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "REGIS Rousselon",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "ROUSSELON Regis",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOHERS Jean-Paul",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "HARAN Christele",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "JACOB Jocelyn",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "SALMON Eric",
+        "diplome": "CQP Animateur Tir à l'Arc"
       }
     ]
   },
@@ -4844,8 +4088,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "Mme GUILMARD Elisabeth",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1253084,
@@ -4869,16 +4113,8 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 2
       }
     ],
     "nb_femmes": 18,
@@ -4906,21 +4142,23 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 3,
     "president": "M GENDRY FABIEN",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "FABIEN Gendry",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "BOUTET Jacques",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "GENDRY Fabien",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "GOUIN Stephane",
+        "diplome": "Encadrant Fédéral"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1253085,
@@ -4939,6 +4177,10 @@
     "nb_arbitres": 1,
     "a_arbitre": true,
     "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      },
       {
         "niveau": "Initiateur",
         "nb": 1
@@ -4963,25 +4205,34 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 5,
     "president": "Mme SEVIN Magali",
-    "entraineurs": [
-      {
-        "nom": "Magali Sevin",
-        "diplomes": [
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Sylvain Marsollier",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "MARSOLLIER Sylvain",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CHARLET Clemence",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "HASCOET Lucas",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PARIZET Nicolas",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "SEVIN Magali",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "ZITTE Lionel",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5027,8 +4278,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M GUERRIER NORBERT",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1272090,
@@ -5048,23 +4299,7 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Animateur d'été",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 2",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur Club",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
         "nb": 1
       }
     ],
@@ -5093,27 +4328,16 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M CHAILLEUX LIONEL",
-    "entraineurs": [
-      {
-        "nom": "Pierre-Alexandre Misraki",
-        "diplomes": [
-          "Animateur d'été",
-          "Entraîneur 2",
-          "Entraîneur Club",
-          "Initiateur",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Jean-Marc Jarry",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "JARRY Jean-Marc",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "MISRAKI Pierre-Alexandre",
+        "diplome": "Entraîneur 2"
       }
     ]
   },
@@ -5133,7 +4357,12 @@
     "pourcentage_jeunes": 29.3,
     "nb_arbitres": 3,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 2
+      }
+    ],
     "nb_femmes": 12,
     "nb_hommes": 46,
     "nb_para": 1,
@@ -5155,32 +4384,30 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 2,
     "president": "Mme BERTIN CECILE",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Gerald Thareau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "COUPRIE Patrick",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Nathalie Onillon",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "ONILLON Nathalie",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Patrick Couprie",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "THAREAU Gerald",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BERTIN Cecile",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LABRE Jerome",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5203,18 +4430,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 2",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur Club",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
         "nb": 1
       }
     ],
@@ -5239,34 +4454,20 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M VERRON PASCAL",
-    "entraineurs": [
-      {
-        "nom": "Jean Yves Gassot",
-        "diplomes": [
-          "Entraîneur 2",
-          "Entraîneur Club",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "PASCAL Beaute",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "BEAUTE Pascal",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "PASCAL Verron",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "VERRON Pascal",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GASSOT Jean Yves",
+        "diplome": "Entraîneur 2"
       }
     ]
   },
@@ -5286,7 +4487,12 @@
     "pourcentage_jeunes": 21.4,
     "nb_arbitres": 3,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
+      }
+    ],
     "nb_femmes": 10,
     "nb_hommes": 18,
     "nb_para": 0,
@@ -5310,34 +4516,34 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 3,
     "president": "Mme ORIEUX ANNE-MARIE",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Cindy Hutin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "GUERIN Laetitia",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Edith Vignon",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "HUTIN Cindy",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "LAETITIA Guerin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "VIGNON Edith",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "ETIENNE Muriel",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "GUERIN Laetitia",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "VIGNON Edith",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5357,7 +4563,12 @@
     "pourcentage_jeunes": 34.3,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      }
+    ],
     "nb_femmes": 15,
     "nb_hommes": 20,
     "nb_para": 0,
@@ -5377,17 +4588,30 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 4,
     "president": "Mme GUERRIER Liliane",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Dimitri Lecomte",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "LECOMTE Dimitri",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GIRARD Philippe",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LECOMTE Dimitri",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LECOMTE Dominique",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PERRION Valerie",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5410,10 +4634,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "CQP Animateur Tir à l'Arc",
-        "nb": 2
-      },
-      {
-        "niveau": "DEJEPS",
         "nb": 1
       },
       {
@@ -5421,15 +4641,11 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
+        "niveau": "Assistant Entraîneur",
+        "nb": 2
       },
       {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 1
       }
     ],
@@ -5454,64 +4670,42 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 4,
+    "nb_entraineurs": 5,
     "president": "Mme TESSIER Geraldine",
-    "entraineurs": [
-      {
-        "nom": "Denis Halna",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "DEJEPS"
-        ],
-        "diplome_principal": "DEJEPS"
-      },
-      {
-        "nom": "Geraldine Tessier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Mado Jaccou",
-        "diplomes": [
-          "Initiateur"
-        ],
-        "diplome_principal": "Initiateur"
-      },
-      {
-        "nom": "Oceane Guy",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc"
-        ],
-        "diplome_principal": "CQP Animateur Tir à l'Arc"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Gregory Koelsch",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "JACCOU Mado",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Mado Jaccou",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "KOELSCH Gregory",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Marie-France Morin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "MORIN Marie-France",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GUY Oceane",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "JACCOU Mado",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "MORIN Marie-France",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "MOUCHOLI Ingrid",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "TESSIER Geraldine",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -5531,7 +4725,16 @@
     "pourcentage_jeunes": 2.8,
     "nb_arbitres": 3,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
+      },
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 4,
     "nb_hommes": 32,
     "nb_para": 1,
@@ -5551,33 +4754,30 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 2,
     "president": "M TOLLET Didier",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Christine Dupar-Ratel",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "DUPAR-RATEL Christine",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "MICHEL Vannier",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "NAVEAU Philippe",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "PHILIPPE Naveau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir en Campagne"
+        "nom": "VANNIER Michel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BESSONNET Arnaud",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LEROUGE Joel",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -5603,12 +4803,8 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
       }
     ],
     "nb_femmes": 21,
@@ -5632,26 +4828,30 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 4,
     "president": "Mme THOMAS EMILIE",
-    "entraineurs": [
-      {
-        "nom": "GERARD Rattier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Carel Bonhomme",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "BONHOMME Carel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "LARDON Jerome",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "RATTIER Gerard",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "REIGNER Tony",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "SEMETEY Simon",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5695,8 +4895,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "Mme GONTHIER Eliane",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1272108,
@@ -5716,11 +4916,7 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Encadrant fédéral",
+        "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
@@ -5728,32 +4924,8 @@
         "nb": 1
       },
       {
-        "niveau": "Entraîneur Fédéral",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Module PARA tir à l'arc",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Sport Santé Bien-être",
-        "nb": 2
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
       }
     ],
     "nb_femmes": 39,
@@ -5779,57 +4951,38 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 5,
     "president": "Mme LECAS Christine",
-    "entraineurs": [
-      {
-        "nom": "Christine Lecas",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Module PARA tir à l'arc",
-          "Sport Santé Bien-être"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Gilles Bouvet",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Entrainement",
-          "Initiateur",
-          "Poussins",
-          "Sport Santé Bien-être"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Michel Thomas",
-        "diplomes": [
-          "BEES 1",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "BEES 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Christine Lecas",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "LECAS Christine",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "GILLES Lecas",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "LECAS Gilles",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOUVET Gilles",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "CONAS Nicolas",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LECAS Christine",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "LECAS Gilles",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MORICE Philippe",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5851,27 +5004,11 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Encadrant fédéral",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Formation continue Arc nu",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
+        "niveau": "Encadrant Fédéral",
         "nb": 2
       }
     ],
@@ -5894,45 +5031,34 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 4,
     "president": "Mme BECU Nathalie",
-    "entraineurs": [
-      {
-        "nom": "Dominique Cochet",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Entrainement",
-          "Formation continue Tir en campagne"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Nathalie Becu",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Tir en campagne"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Laurent Carlin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "CARLIN Laurent",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Muriel Gac",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "GAC Muriel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BECU Nathalie",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "CARLIN Laurent",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COCHET Dominique",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "GAC Muriel",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -5952,7 +5078,12 @@
     "pourcentage_jeunes": 22.0,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "DEJEPS",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 17,
     "nb_hommes": 33,
     "nb_para": 10,
@@ -5972,10 +5103,15 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M PILON Fabrice",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "HALNA Denis",
+        "diplome": "DEJEPS"
+      }
+    ]
   },
   {
     "code_structure": 1285113,
@@ -5995,11 +5131,11 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 2",
+        "niveau": "CQP Animateur Tir à l'Arc",
         "nb": 1
       },
       {
-        "niveau": "Entraîneur Club",
+        "niveau": "Entraîneur 2",
         "nb": 1
       },
       {
@@ -6007,19 +5143,15 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
+        "niveau": "Entraîneur Club",
+        "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
       },
       {
         "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Module PARA tir à l'arc",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 1
       }
     ],
@@ -6050,56 +5182,42 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 6,
     "president": "Mme CHIRON Marina",
-    "entraineurs": [
-      {
-        "nom": "ALEXANDRE Herbreteau",
-        "diplomes": [
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Test pré-requis"
-      },
-      {
-        "nom": "Mickael Vallognes",
-        "diplomes": [
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "YVELINE Chagneau",
-        "diplomes": [
-          "Entraîneur 2",
-          "Entraîneur Club",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur",
-          "Module PARA tir à l'arc"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Dominique Coulon",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "CHAGNEAU Yveline",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "YVELINE Chagneau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "COULON Dominique",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CHAGNEAU Yveline",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "CHIRON Marina",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COULON Dominique",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "DELAUTRE Sylvie",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "LEBAS Christophe",
+        "diplome": "Entraîneur Club"
+      },
+      {
+        "nom": "VALLOGNES Mickael",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -6123,26 +5241,6 @@
       {
         "niveau": "Entraîneur 1",
         "nb": 2
-      },
-      {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Sport Santé Bien-être",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
       }
     ],
     "nb_femmes": 13,
@@ -6166,36 +5264,20 @@
     "discipline_principale": null,
     "nb_entraineurs": 2,
     "president": "M LACREUSE Daniel",
-    "entraineurs": [
-      {
-        "nom": "ISABELLE Lacreuse",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Sport Santé Bien-être"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      },
-      {
-        "nom": "Romain Retaillaud",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Daniel Lacreuse",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "LACREUSE Daniel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "LACREUSE Isabelle",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "RETAILLAUD Romain",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -6218,14 +5300,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 2
-      },
-      {
-        "niveau": "Test pré-requis",
         "nb": 2
       }
     ],
@@ -6256,27 +5330,17 @@
     "discipline_principale": null,
     "nb_entraineurs": 2,
     "president": "M TALON Pascal",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Laurent Minvielle",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "MINVIELLE Laurent",
+        "diplome": "Entraîneur 1"
       },
       {
-        "nom": "Pascal Talon",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Tir en campagne",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
+        "nom": "TALON Pascal",
+        "diplome": "Entraîneur 1"
       }
-    ],
-    "arbitres": []
+    ]
   },
   {
     "code_structure": 1285116,
@@ -6296,20 +5360,16 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 2
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 2
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 4
+        "niveau": "Entraîneur 1",
+        "nb": 2
       },
       {
         "niveau": "Initiateur",
-        "nb": 2
+        "nb": 1
       }
     ],
     "nb_femmes": 23,
@@ -6331,62 +5391,38 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 4,
+    "nb_entraineurs": 5,
     "president": "Mme FILLON Morgane",
-    "entraineurs": [
-      {
-        "nom": "Edith Bariod",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "GERARD Devineau",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "OLIVIER Humeau",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "OLIVIER Rigaud",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Edith Bariod",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "BARIOD Edith",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "GERARD Devineau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "DEVINEAU Gerard",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BARIOD Edith",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "DEVINEAU Gerard",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "HUMEAU Olivier",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PARENT Samuel",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "RIGAUD Olivier",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -6412,20 +5448,8 @@
         "nb": 3
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
       }
     ],
     "nb_femmes": 29,
@@ -6455,44 +5479,38 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 6,
     "president": "M PEREIRA Guillaume",
-    "entraineurs": [
-      {
-        "nom": "JEAN-MARCEL Quiblier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "JOSEPH Gallet",
-        "diplomes": [
-          "Entraîneur 1"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Jean-Pol Millier",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Jean-Pierre Royer",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "ROYER Jean-Pierre",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GALLET Joseph",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "MILLIER Jean-Pol",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "MORAND Olivier",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PEREDO Stephanie",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PEREIRA Guillaume",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "QUIBLIER Jean-Marcel",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -6510,19 +5528,11 @@
     "logo_url": "logos/club_1285119.png",
     "licences_total": 31,
     "pourcentage_jeunes": 22.6,
-    "nb_arbitres": 1,
-    "a_arbitre": true,
+    "nb_arbitres": 0,
+    "a_arbitre": false,
     "niveaux_entraineurs": [
       {
-        "niveau": "BEES 1",
-        "nb": 1
-      },
-      {
         "niveau": "DEJEPS",
-        "nb": 1
-      },
-      {
-        "niveau": "Encadrant fédéral",
         "nb": 1
       },
       {
@@ -6551,31 +5561,15 @@
     "discipline_principale": null,
     "nb_entraineurs": 2,
     "president": "Mme DURIEZ SABINE",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "Catherine Migne",
-        "diplomes": [
-          "BEES 1",
-          "DEJEPS"
-        ],
-        "diplome_principal": "DEJEPS"
+        "nom": "BUITRAGO JOLLY Maria",
+        "diplome": "Entraîneur Fédéral"
       },
       {
-        "nom": "Maria Buitrago Jolly",
-        "diplomes": [
-          "Encadrant fédéral",
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
-    "arbitres": [
-      {
-        "nom": "SABINE Duriez",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "MIGNE Catherine",
+        "diplome": "DEJEPS"
       }
     ]
   },
@@ -6597,11 +5591,7 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Assistant Entraîneur",
-        "nb": 1
-      },
-      {
-        "niveau": "Encadrant fédéral",
+        "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
@@ -6609,27 +5599,11 @@
         "nb": 2
       },
       {
-        "niveau": "Entraîneur Fédéral",
-        "nb": 1
+        "niveau": "Encadrant Fédéral",
+        "nb": 6
       },
       {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Arc nu",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
+        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -6658,47 +5632,54 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 10,
     "president": "Mme ALLAIN HELENE",
-    "entraineurs": [
-      {
-        "nom": "ALEXIS Uckman",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Arc nu"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      },
-      {
-        "nom": "DANY Rabreau",
-        "diplomes": [
-          "Assistant Entraîneur",
-          "Encadrant fédéral",
-          "Entraîneur Fédéral"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "MICHEL Poupet",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Cedric Martin",
-        "qualifications": [
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Initiale"
+        "nom": "MARTIN Cedric",
+        "niveau": "Arbitre Formateur"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "ALLAIN Helene",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "AREVIAN Edouard",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COUPRIE Benoit",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "FOURES Stephane",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "GUIBERT Dominique",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "MARTIN Cedric",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "POUPET Michel",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "RABREAU Dany",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "RABREAU Franck",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "UCKMAN Alexis",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -6720,24 +5701,12 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Assistant Entraîneur",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 1",
         "nb": 1
       },
       {
-        "niveau": "Formation complémentaire de E1 à EF",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
+        "niveau": "Assistant Entraîneur",
+        "nb": 4
       }
     ],
     "nb_femmes": 34,
@@ -6761,44 +5730,42 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 5,
     "president": "M CONSTANTIN JEAN-MICHEL",
-    "entraineurs": [
-      {
-        "nom": "Mylene Constantin",
-        "diplomes": [
-          "Assistant Entraîneur",
-          "Entraîneur 1",
-          "Formation complémentaire de E1 à EF",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "Formation complémentaire de E1 à EF"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "EMMANUEL Joussemet",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "CONSTANTIN Jean-Michel",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "JEAN-MICHEL Constantin",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "HUAULME Lucas",
+        "niveau": "Jeune Arbitre"
       },
       {
-        "nom": "Lucas Huaulme",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles",
-          "Jeune Arbitre - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "JOUSSEMET Emmanuel",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BOBIN Danielle",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "CONSTANTIN Alizee",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "CONSTANTIN Mylene",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "GUERINEAU Catherine",
+        "diplome": "Assistant Entraîneur"
+      },
+      {
+        "nom": "HUAULME Samuel",
+        "diplome": "Assistant Entraîneur"
       }
     ]
   },
@@ -6824,11 +5791,7 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       }
     ],
@@ -6851,35 +5814,26 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 2,
     "president": "M HILAIRE Joris",
-    "entraineurs": [
-      {
-        "nom": "Roger Berenguer",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Roger Berenguer",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "BARBEAU Theo",
+        "niveau": "Jeune Arbitre"
       },
       {
-        "nom": "Theo Barbeau",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "BERENGUER Roger",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BERENGUER Roger",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "FIGUREAU Jonathan",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -6902,18 +5856,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -6944,26 +5886,16 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M FONTENELLE Patrick",
-    "entraineurs": [
-      {
-        "nom": "Patrick Fontenelle",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Chantal Mora-Tache",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "MORA-TACHE Chantal",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "FONTENELLE Patrick",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -6983,7 +5915,12 @@
     "pourcentage_jeunes": 14.8,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 18,
     "nb_hommes": 36,
     "nb_para": 1,
@@ -7003,10 +5940,15 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M LEROY Jean-Jacques",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "CHALIGNE Olivier",
+        "diplome": "Initiateur"
+      }
+    ]
   },
   {
     "code_structure": 1285126,
@@ -7024,7 +5966,12 @@
     "pourcentage_jeunes": 23.8,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 3
+      }
+    ],
     "nb_femmes": 30,
     "nb_hommes": 50,
     "nb_para": 7,
@@ -7050,10 +5997,23 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 3,
     "president": "Mme LE REUN Gwenola",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "BONNIN Clemence",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "COCHAIS Adele",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "THIAUDIERE Pascal",
+        "diplome": "Encadrant Fédéral"
+      }
+    ]
   },
   {
     "code_structure": 1285128,
@@ -7077,20 +6037,8 @@
         "nb": 2
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Initiateur",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 2
       }
     ],
     "nb_femmes": 11,
@@ -7118,58 +6066,34 @@
       "3D"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 3,
     "president": "M PAILLAT FREDERIC",
-    "entraineurs": [
-      {
-        "nom": "Emmanuel Paillat",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "FREDERIC Paillat",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Initiateur",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Emmanuel Paillat",
-        "qualifications": [
-          "Arbitre Formateur - Initiale",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Formateur - Initiale"
+        "nom": "BOURASSEAU Jeremy",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Jeremy Bourasseau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "DEVAUTOUR Sarah",
+        "niveau": "Jeune Arbitre"
       },
       {
-        "nom": "Sarah Devautour",
-        "qualifications": [
-          "Jeune Arbitre - Examen - Cibles",
-          "Jeune Arbitre - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Jeune Arbitre - Examen - Cibles"
+        "nom": "PAILLAT Emmanuel",
+        "niveau": "Arbitre Formateur"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "MORIN Dominique",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "PAILLAT Emmanuel",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "PAILLAT Frederic",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -7189,7 +6113,16 @@
     "pourcentage_jeunes": 21.4,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Entraîneur 1",
+        "nb": 1
+      },
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 4
+      }
+    ],
     "nb_femmes": 9,
     "nb_hommes": 19,
     "nb_para": 0,
@@ -7209,18 +6142,34 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 5,
     "president": "M AUGUIN BENOIT",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "JEROME Devanne",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Beursault",
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Beursault"
+        "nom": "DEVANNE Jerome",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "AUGUIN Benoit",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DEVANNE Jerome",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "GREINER Jocelyn",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "HULLIN Bruno",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "LANGLOIS Amelie",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -7266,8 +6215,8 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M BARRAUD Eric",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": []
   },
   {
     "code_structure": 1285131,
@@ -7285,7 +6234,12 @@
     "pourcentage_jeunes": 3.1,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 2
+      }
+    ],
     "nb_femmes": 9,
     "nb_hommes": 23,
     "nb_para": 1,
@@ -7303,17 +6257,22 @@
       "Salle"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 2,
     "president": "M GAUTIER Hubert",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Marc Remaud",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "REMAUD Marc",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "CADOT Cyril",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "DUFOUR Mary Lise",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -7335,7 +6294,7 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "BEES 1",
+        "niveau": "DEJEPS",
         "nb": 1
       },
       {
@@ -7343,35 +6302,15 @@
         "nb": 1
       },
       {
-        "niveau": "DEJEPS",
-        "nb": 1
-      },
-      {
-        "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 3
+        "niveau": "Encadrant Fédéral",
+        "nb": 8
       },
       {
-        "niveau": "Formation continue Diverses Entrainement",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
-        "nb": 1
-      },
-      {
-        "niveau": "Poussins",
-        "nb": 1
-      },
-      {
-        "niveau": "Tir à l'arc sur Ordonnance",
+        "niveau": "Initiateur",
         "nb": 1
       }
     ],
@@ -7404,48 +6343,62 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 12,
     "president": "Mme GAUTIER Christelle",
-    "entraineurs": [
-      {
-        "nom": "Catherine Bichard",
-        "diplomes": [
-          "BEES 1",
-          "DEJEPS",
-          "Formation continue Diverses Apprentissage",
-          "Tir à l'arc sur Ordonnance"
-        ],
-        "diplome_principal": "DEJEPS"
-      },
-      {
-        "nom": "Elisabeth Dufeu",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement"
-        ],
-        "diplome_principal": "CQP Animateur Tir à l'Arc"
-      },
-      {
-        "nom": "FLORENCE Valerius De Beffort",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Formation continue Tir en campagne",
-          "Poussins"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "RICHARD Cosson",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "COSSON Richard",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BARRETEAU Jean Claude",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BATARD Francois",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "BICHARD Catherine",
+        "diplome": "DEJEPS"
+      },
+      {
+        "nom": "BOISSEAU Huguette",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "CHAIGNEAU Dominique",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DEBRY Sylvain",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DEHIERE Alain",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "DUFEU Elisabeth",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "HUCHET Paul",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "POUPON Sebastien",
+        "diplome": "Encadrant Fédéral"
+      },
+      {
+        "nom": "ROSSI Janine",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "VALERIUS DE BEFFORT Florence",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -7467,36 +6420,20 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Assistant Entraîneur",
-        "nb": 1
-      },
-      {
         "niveau": "CQP Animateur Tir à l'Arc",
         "nb": 2
+      },
+      {
+        "niveau": "Entraîneur Fédéral",
+        "nb": 1
       },
       {
         "niveau": "Entraîneur 1",
         "nb": 2
       },
       {
-        "niveau": "Entraîneur Fédéral",
-        "nb": 2
-      },
-      {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 4
-      },
-      {
-        "niveau": "Formation continue Diverses Entrainement",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
-      },
-      {
-        "niveau": "Sport Santé Bien-être",
-        "nb": 1
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
       }
     ],
     "nb_femmes": 25,
@@ -7520,79 +6457,46 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 5,
+    "nb_entraineurs": 6,
     "president": "M GRUDE Pascal",
-    "entraineurs": [
-      {
-        "nom": "Anne-Gaelle Begoc",
-        "diplomes": [
-          "Assistant Entraîneur",
-          "CQP Animateur Tir à l'Arc"
-        ],
-        "diplome_principal": "CQP Animateur Tir à l'Arc"
-      },
-      {
-        "nom": "Guillaume Junker",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
-      },
-      {
-        "nom": "Michael Eisenbeth",
-        "diplomes": [
-          "CQP Animateur Tir à l'Arc",
-          "Entraîneur Fédéral",
-          "Formation continue Diverses Apprentissage",
-          "Sport Santé Bien-être"
-        ],
-        "diplome_principal": "CQP Animateur Tir à l'Arc"
-      },
-      {
-        "nom": "Michel Jeanneau",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Formation continue Diverses Entrainement",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      },
-      {
-        "nom": "Pierre Grude-Delaroux",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Anne-Gaelle Begoc",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "BEGOC Anne-Gaelle",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Jean Luc Prioux",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "PRIOUX Jean Luc",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Kevin Touzeau",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "TOUZEAU Kevin",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "BEGOC Anne-Gaelle",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "EISENBETH Michael",
+        "diplome": "CQP Animateur Tir à l'Arc"
+      },
+      {
+        "nom": "GRUDE-DELAROUX Pierre",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "JEANNEAU Michel",
+        "diplome": "Entraîneur 1"
+      },
+      {
+        "nom": "JUNKER Guillaume",
+        "diplome": "Entraîneur Fédéral"
+      },
+      {
+        "nom": "PRIOUX Jean Luc",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -7610,13 +6514,9 @@
     "logo_url": "logos/club_1285134.png",
     "licences_total": 50,
     "pourcentage_jeunes": 24.0,
-    "nb_arbitres": 1,
-    "a_arbitre": true,
+    "nb_arbitres": 0,
+    "a_arbitre": false,
     "niveaux_entraineurs": [
-      {
-        "niveau": "Entraîneur 1",
-        "nb": 2
-      },
       {
         "niveau": "Entraîneur 2",
         "nb": 1
@@ -7626,20 +6526,12 @@
         "nb": 1
       },
       {
-        "niveau": "Formation continue Arc nu",
+        "niveau": "Entraîneur 1",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 2
-      },
-      {
-        "niveau": "Module PARA tir à l'arc",
-        "nb": 2
-      },
-      {
-        "niveau": "Test pré-requis",
-        "nb": 2
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
       }
     ],
     "nb_femmes": 21,
@@ -7661,46 +6553,25 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 3,
+    "nb_entraineurs": 4,
     "president": "M BREBANT Maurice",
+    "arbitres": [],
     "entraineurs": [
       {
-        "nom": "GILDAS Valle",
-        "diplomes": [
-          "Entraîneur Fédéral",
-          "Module PARA tir à l'arc"
-        ],
-        "diplome_principal": "Entraîneur Fédéral"
+        "nom": "BREBANT Maurice",
+        "diplome": "Entraîneur 2"
       },
       {
-        "nom": "Maurice Brebant",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 2"
+        "nom": "MASSICOT Jean Pierre",
+        "diplome": "Encadrant Fédéral"
       },
       {
-        "nom": "Paul Planckeel",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Arc nu",
-          "Formation continue Diverses Apprentissage",
-          "Module PARA tir à l'arc",
-          "Test pré-requis"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
-    "arbitres": [
+        "nom": "PLANCKEEL Paul",
+        "diplome": "Entraîneur 1"
+      },
       {
-        "nom": "Alain Meyer",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tronc Commun"
+        "nom": "VALLE Gildas",
+        "diplome": "Entraîneur Fédéral"
       }
     ]
   },
@@ -7720,7 +6591,12 @@
     "pourcentage_jeunes": 14.3,
     "nb_arbitres": 1,
     "a_arbitre": true,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Initiateur",
+        "nb": 2
+      }
+    ],
     "nb_femmes": 17,
     "nb_hommes": 25,
     "nb_para": 0,
@@ -7740,17 +6616,22 @@
       "TAE"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 2,
     "president": "M AMIOT Serge",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "STEPHANIE Vandenbussche",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "VANDENBUSSCHE Stephanie",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "GOBIN Fabrice",
+        "diplome": "Initiateur"
+      },
+      {
+        "nom": "VANDENBUSSCHE Ludovic",
+        "diplome": "Initiateur"
       }
     ]
   },
@@ -7772,19 +6653,11 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
         "niveau": "Entraîneur 2",
         "nb": 1
       },
       {
-        "niveau": "Formation continue Diverses Apprentissage",
-        "nb": 1
-      },
-      {
-        "niveau": "Initiateur",
+        "niveau": "Encadrant Fédéral",
         "nb": 1
       }
     ],
@@ -7809,28 +6682,22 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 1,
+    "nb_entraineurs": 2,
     "president": "Mme HOARAU-ECLAPIER DIANE",
-    "entraineurs": [
-      {
-        "nom": "Michel Depiets",
-        "diplomes": [
-          "Entraîneur 1",
-          "Entraîneur 2",
-          "Formation continue Diverses Apprentissage",
-          "Initiateur"
-        ],
-        "diplome_principal": "Entraîneur 2"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "EMILIE Depiets",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "DEPIETS Emilie",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "DEPIETS Michel",
+        "diplome": "Entraîneur 2"
+      },
+      {
+        "nom": "GIET Pascal",
+        "diplome": "Encadrant Fédéral"
       }
     ]
   },
@@ -7850,7 +6717,12 @@
     "pourcentage_jeunes": 20.0,
     "nb_arbitres": 0,
     "a_arbitre": false,
-    "niveaux_entraineurs": [],
+    "niveaux_entraineurs": [
+      {
+        "niveau": "Encadrant Fédéral",
+        "nb": 1
+      }
+    ],
     "nb_femmes": 20,
     "nb_hommes": 45,
     "nb_para": 1,
@@ -7876,10 +6748,15 @@
       "Para"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 0,
+    "nb_entraineurs": 1,
     "president": "M POIRAUD Lionel",
-    "entraineurs": [],
-    "arbitres": []
+    "arbitres": [],
+    "entraineurs": [
+      {
+        "nom": "POIRAUD Lionel",
+        "diplome": "Encadrant Fédéral"
+      }
+    ]
   },
   {
     "code_structure": 1285142,
@@ -7900,10 +6777,6 @@
     "niveaux_entraineurs": [
       {
         "niveau": "Entraîneur 1",
-        "nb": 1
-      },
-      {
-        "niveau": "Formation continue Tir en campagne",
         "nb": 1
       }
     ],
@@ -7938,24 +6811,16 @@
     "discipline_principale": null,
     "nb_entraineurs": 1,
     "president": "M WILLEKENS Frederic",
-    "entraineurs": [
-      {
-        "nom": "Frederic Willekens",
-        "diplomes": [
-          "Entraîneur 1",
-          "Formation continue Tir en campagne"
-        ],
-        "diplome_principal": "Entraîneur 1"
-      }
-    ],
     "arbitres": [
       {
-        "nom": "Frederic Willekens",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "WILLEKENS Frederic",
+        "niveau": "Arbitre Fédéral"
+      }
+    ],
+    "entraineurs": [
+      {
+        "nom": "WILLEKENS Frederic",
+        "diplome": "Entraîneur 1"
       }
     ]
   },
@@ -8003,34 +6868,20 @@
     "discipline_principale": null,
     "nb_entraineurs": 0,
     "president": "M LAPKINE Pascal",
-    "entraineurs": [],
     "arbitres": [
       {
-        "nom": "Daniel Sciandra",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles"
+        "nom": "LAPKINE Pascal",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Gael Raballand",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Cibles anglaises",
-          "Arbitre Fédéral - Examen - Tir en Campagne",
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Cibles anglaises"
+        "nom": "RABALLAND Gael",
+        "niveau": "Arbitre Fédéral"
       },
       {
-        "nom": "Pascal Lapkine",
-        "qualifications": [
-          "Arbitre Fédéral - Examen - Tir nature / 3D",
-          "Arbitre Fédéral - Examen - Tronc Commun"
-        ],
-        "qualification_principale": "Arbitre Fédéral - Examen - Tir nature / 3D"
+        "nom": "SCIANDRA Daniel",
+        "niveau": "Arbitre Fédéral"
       }
-    ]
+    ],
+    "entraineurs": []
   }
 ]
