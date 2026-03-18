@@ -1,4 +1,3 @@
-
 function labelBadge(label){
   if(!label) return "";
   const key = String(label).toLowerCase();
@@ -80,87 +79,64 @@ function legendHtml(){
   const label = displayMode==="femmes" ? "% femmes"
               : displayMode==="para" ? "% para"
               : "% jeunes compétiteurs 18m";
-  elLegend.innerHTML = `<span class="legendLabel"><span class="legendDot"></span>Couleur = ${label}</span><span class="legendBar" aria-hidden="true"></span><span style="color:rgba(226,232,240,.65)">${modeScale.min.toFixed(1)} → ${modeScale.max.toFixed(1)}%</span>`;
+  const steps = [0, .25, .5, .75, 1].map(t=>{
+    const c = t<0.5 ? colorLerp("94a3b8","3b82f6",t*2) : colorLerp("3b82f6","a855f7",(t-0.5)*2);
+    const v = (modeScale.min + t*(modeScale.max-modeScale.min)).toFixed(0);
+    return `<span class="legStep"><i style="background:${c}"></i>${v}</span>`;
+  }).join("");
+  elLegend.innerHTML = `<span class="legendLabel">Couleur = ${label}</span><span class="legScale">${steps}</span>`;
 }
 
-function radiusForLicences(n){
-  const v = Math.max(0, Number(n||0));
-  return Math.max(5, Math.min(18, 4 + Math.sqrt(v) * 1.0));
+function radiusForClub(c){
+  const n = Math.max(0, Number(c.licences_total||0));
+  return 6 + Math.sqrt(n) * 1.6;
 }
 
-function initMap(){
-  map = L.map("map", { preferCanvas: true }).setView(MAP_CENTER, MAP_ZOOM);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap'
-  }).addTo(map);
-  clustersLayer = L.markerClusterGroup({
-    showCoverageOnHover:false,
-    iconCreateFunction: function(cluster){
-      const children = cluster.getAllChildMarkers();
-      const n = children.length;
-      let sum = 0, cnt = 0;
-      for(const m of children){
-        const c = m.__clubData;
-        if(!c) continue;
-        const v = valueForMode(c);
-        if(Number.isFinite(v)){ sum += v; cnt++; }
-      }
-      const avg = cnt ? (sum/cnt) : 0;
-      const denom = (modeScale.max - modeScale.min) || 1;
-      let t = clamp((avg - modeScale.min)/denom, 0, 1);
-      t = Math.pow(t, 0.75);
-      const low="94a3b8", mid="3b82f6", high="a855f7";
-      const col = (displayMode==="licences") ? "rgba(96,165,250,.32)" : (t<0.5 ? colorLerp(low, mid, t*2) : colorLerp(mid, high, (t-0.5)*2));
-      return L.divIcon({
-        html: `<div style="background:rgba(255,255,255,.10);border-radius:999px;padding:2px"><div style="background:${col};border:1px solid rgba(226,232,240,.25);border-radius:999px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;box-shadow:var(--shadow)">${n}</div></div>`,
-        className: "",
-        iconSize: [46,46]
-      });
-    },
-    spiderfyOnMaxZoom:true,
-    disableClusteringAtZoom:13,
-    maxClusterRadius:50
-  });
-  plainLayer = L.layerGroup().addTo(map);
-  map.addLayer(clustersLayer);
-
-  // Mini légende (sur la carte)
-  const legendCtl = L.control({position:'bottomright'});
-  legendCtl.onAdd = function(){
-    const div = L.DomUtil.create('div','legendCtl leaflet-control');
-    div.innerHTML = '<div class="t">Légende</div><div id="mapLegend"></div>';
-    return div;
-  };
-  legendCtl.addTo(map);
-
-}
-
-
-function pieSvg(pctWomen){
-  const p = Math.max(0, Math.min(100, Number(pctWomen||0)));
-  // Donut chart via stroke-dasharray
-  const r = 16;
-  const c = 2 * Math.PI * r;
-  const w = (p/100) * c;
-  const m = c - w;
+function pieSvg(pct){
+  const p = Math.max(0, Math.min(100, Number(pct||0)));
+  const r = 22, c = 2 * Math.PI * r;
+  const filled = c * (p/100);
   return `
-  <svg width="44" height="44" viewBox="0 0 44 44" aria-label="Répartition femmes / hommes">
-    <g transform="translate(22,22) rotate(-90)">
-      <circle r="${r}" cx="0" cy="0" fill="none" stroke="#e2e8f0" stroke-width="10"></circle>
-      <circle r="${r}" cx="0" cy="0" fill="none" stroke="#a855f7" stroke-width="10"
-              stroke-dasharray="${w.toFixed(2)} ${m.toFixed(2)}" stroke-linecap="butt"></circle>
-    </g>
-    <text x="22" y="26" text-anchor="middle" font-size="10" font-weight="800" fill="#0f172a">${p.toFixed(0)}%</text>
+  <svg viewBox="0 0 56 56" class="pie" aria-hidden="true">
+    <circle cx="28" cy="28" r="22" fill="none" stroke="#e5e7eb" stroke-width="8"></circle>
+    <circle cx="28" cy="28" r="22" fill="none" stroke="#ec4899" stroke-width="8"
+      stroke-linecap="round"
+      stroke-dasharray="${filled} ${c-filled}"
+      transform="rotate(-90 28 28)"></circle>
+    <text x="28" y="31" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">${Math.round(p)}%</text>
   </svg>`;
+}
+
+function renderNamedPeople(list, emptyText, valueKey){
+  if(!Array.isArray(list) || !list.length){
+    return `<div style="font-size:12px;color:#64748b;margin-top:6px">${emptyText}</div>`;
+  }
+  const sorted = list.slice().sort((a,b) => String(a.nom || "").localeCompare(String(b.nom || ""), "fr"));
+  return `<ul>${sorted.map(x => {
+    const detail = x && x[valueKey] ? ` — <b>${esc(x[valueKey])}</b>` : "";
+    return `<li>${esc(x?.nom || "Nom non renseigné")}${detail}</li>`;
+  }).join("")}</ul>`;
 }
 
 function makePopupHtml(c){
   const coachLines = (c.niveaux_entraineurs?.length)
     ? `<ul>${c.niveaux_entraineurs
+        .slice()
         .sort((a,b)=> String(a.niveau).localeCompare(String(b.niveau), "fr"))
         .map(x => `<li>${esc(x.niveau)} : <b>${esc(x.nb)}</b></li>`).join("")}</ul>`
     : `<div style="font-size:12px;color:#64748b;margin-top:6px">Aucun diplôme entraîneur actif détecté.</div>`;
+
+  const arbitresLines = renderNamedPeople(
+    c.arbitres,
+    "Aucun arbitre renseigné.",
+    "niveau"
+  );
+
+  const entraineursLines = renderNamedPeople(
+    c.entraineurs,
+    "Aucun entraîneur renseigné.",
+    "diplome"
+  );
 
   const youth = (typeof c.pourcentage_jeunes === "number")
     ? `${c.pourcentage_jeunes.toFixed(1)}%`
@@ -170,7 +146,7 @@ function makePopupHtml(c){
   const pctP = (typeof c.pct_para === "number") ? c.pct_para : 0;
 
   const logo = c.logo_url
-    ? `<img class="logo" src="${esc(c.logo_url)}" alt="Logo ${esc(c.nom)}" onerror="this.onerror=null;this.src=\'assets/logo_placeholder.svg\';" />`
+    ? `<img class="logo" src="${esc(c.logo_url)}" alt="Logo ${esc(c.nom)}" onerror="this.onerror=null;this.src='assets/logo_placeholder.svg';" />`
     : `<div class="logo" style="display:flex;align-items:center;justify-content:center;font-size:12px;color:#64748b">LOGO</div>`;
 
   const links = [
@@ -227,6 +203,12 @@ function makePopupHtml(c){
       </div>
     </div>
 
+    <div style="margin-top:10px;font-weight:700">Arbitres</div>
+    ${arbitresLines}
+
+    <div style="margin-top:10px;font-weight:700">Entraîneurs</div>
+    ${entraineursLines}
+
     <div style="margin-top:10px;font-weight:700">Diplômes entraîneur (niveau)</div>
     ${coachLines}
 
@@ -235,169 +217,231 @@ function makePopupHtml(c){
 }
 
 
-
 function markerForClub(c){
-  const size = radiusForLicences(c.licences_total) * 2.2; // circleMarker radius -> px diameter scaling
+  const r = radiusForClub(c);
   const color = colorForMode(c);
-  const icon = L.divIcon({
-    className: "club-marker",
-    html: `<div class="dotMarker" style="--s:${size.toFixed(1)}px;--c:${esc(color)}"></div>`,
-    iconSize: [size, size],
-    iconAnchor: [size/2, size/2],
-    popupAnchor: [0, -size/2]
+  return L.circleMarker([c.lat, c.lng], {
+    radius: r,
+    weight: 2,
+    color: "#ffffff",
+    fillColor: color,
+    fillOpacity: 0.9
   });
-
-  const marker = L.marker([c.lat, c.lon], { icon });
-  marker.__clubData = c;
-  marker.bindPopup(makePopupHtml(c), { maxWidth: 360 });
-  return marker;
 }
 
+function itemHtml(c){
+  return `
+    <button class="clubItem" data-id="${esc(c.code_structure)}">
+      <div>
+        <div class="clubName">${esc(c.nom)}</div>
+        <div class="clubMeta">${esc(c.departement || "")} • ${Number(c.licences_total||0)} licenciés</div>
+      </div>
+      <div class="clubRight">
+        ${c.a_arbitre ? `<span class="miniBadge">Arbitre</span>` : ""}
+      </div>
+    </button>`;
+}
+
+function statsHtml(list){
+  const nb = list.length;
+  const totalLic = list.reduce((s,c)=>s + Number(c.licences_total||0), 0);
+  const avgF = nb ? list.reduce((s,c)=>s + Number(c.pct_femmes||0), 0)/nb : 0;
+  const avgP = nb ? list.reduce((s,c)=>s + Number(c.pct_para||0), 0)/nb : 0;
+  return `
+    <div class="stat"><span>Clubs</span><strong>${nb}</strong></div>
+    <div class="stat"><span>Licenciés</span><strong>${totalLic}</strong></div>
+    <div class="stat"><span>% femmes (moy.)</span><strong>${avgF.toFixed(1)}%</strong></div>
+    <div class="stat"><span>% para (moy.)</span><strong>${avgP.toFixed(1)}%</strong></div>`;
+}
+
+function syncDeptAndPracticeOptions(){
+  const depts = [...new Set(clubs.map(c => String(c.departement || "").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr"));
+  const practices = [...new Set(clubs.flatMap(c => Array.isArray(c.pratiques) ? c.pratiques : []).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr"));
+
+  elDept.innerHTML = `<option value="">Tous départements</option>` + depts.map(d => `<option value="${esc(d)}">${esc(d)}</option>`).join("");
+  elPractice.innerHTML = `<option value="">Toutes pratiques</option>` + practices.map(p => `<option value="${esc(p)}">${esc(p)}</option>`).join("");
+}
+
+function applyFilters(){
+  const q = (elSearch.value || "").toLowerCase().trim();
+  const dept = elDept.value;
+  const practice = elPractice.value;
+  const onlyYouth = !!elOnlyYouth.checked;
+  const onlyRef = !!elOnlyRef.checked;
+
+  filtered = clubs.filter(c => {
+    const text = [c.nom, c.departement, c.president].filter(Boolean).join(" ").toLowerCase();
+    const okQ = !q || text.includes(q);
+    const okDept = !dept || String(c.departement||"") === dept;
+    const okPractice = !practice || (Array.isArray(c.pratiques) && c.pratiques.includes(practice));
+    const okYouth = !onlyYouth || Number(c.pourcentage_jeunes||0) > 0;
+    const okRef = !onlyRef || !!c.a_arbitre;
+    return okQ && okDept && okPractice && okYouth && okRef;
+  });
+
+  recomputeScale();
+  renderAll();
+}
+
+function clearLayers(){
+  if(clustersLayer){ clustersLayer.clearLayers(); }
+  if(plainLayer){ plainLayer.clearLayers(); }
+}
 
 function renderMarkers(){
-  recomputeScale();
-  legendHtml();
-  plainLayer.clearLayers();
-  clustersLayer.clearLayers();
-  const useClusters = elClusterToggle ? elClusterToggle.checked : true;
+  clearLayers();
+
   filtered.forEach(c => {
+    if(!Number.isFinite(Number(c.lat)) || !Number.isFinite(Number(c.lng))) return;
     const m = markerForClub(c);
-    if(useClusters) clustersLayer.addLayer(m);
-    else plainLayer.addLayer(m);
+    m.bindPopup(makePopupHtml(c), { maxWidth: 430 });
+    m.on("click", ()=> map.setView([c.lat, c.lng], Math.max(map.getZoom(), 10)));
+    if(elClusterToggle && elClusterToggle.checked){
+      clustersLayer.addLayer(m);
+    }else{
+      plainLayer.addLayer(m);
+    }
   });
-  if(useClusters){
+
+  if(elClusterToggle && elClusterToggle.checked){
     if(!map.hasLayer(clustersLayer)) map.addLayer(clustersLayer);
-  } else {
+    if(map.hasLayer(plainLayer)) map.removeLayer(plainLayer);
+  }else{
+    if(!map.hasLayer(plainLayer)) map.addLayer(plainLayer);
     if(map.hasLayer(clustersLayer)) map.removeLayer(clustersLayer);
   }
 }
 
-function renderStats(){
-  const total = filtered.length;
-  const withRef = filtered.filter(c => c.a_arbitre).length;
-  const sumLic = filtered.reduce((a,c)=>a+Number(c.licences_total||0),0);
-  const avgYouth = (() => {
-    const vals = filtered.map(c => c.pourcentage_jeunes).filter(v => typeof v === "number");
-    if (!vals.length) return null;
-    return vals.reduce((a,b)=>a+b,0) / vals.length;
-  })();
-
-  elStats.innerHTML = `
-    <div class="kpi"><div class="label">Clubs affichés</div><div class="value">${total}</div></div>
-    <div class="kpi"><div class="label">Avec arbitre</div><div class="value">${withRef}</div></div>
-    <div class="kpi"><div class="label">Licences (total)</div><div class="value">${sumLic}</div></div>
-    <div class="kpi"><div class="label">% jeunes moyen</div><div class="value">${avgYouth===null ? "—" : avgYouth.toFixed(1)+"%"}</div></div>
-  `;
-}
-
 function renderList(){
-  elList.innerHTML = "";
-  const frag = document.createDocumentFragment();
-  filtered.slice().sort((a,b)=> (Number(b.licences_total||0) - Number(a.licences_total||0))).forEach(c => {
-    const div = document.createElement("div");
-    div.className = "item";
-    const youth = (typeof c.pourcentage_jeunes === "number") ? `${c.pourcentage_jeunes.toFixed(1)}%` : "—";
-    div.innerHTML = `
-      <div class="name">${esc(c.nom)}</div>
-      <div class="meta">
-        <span class="badge">${esc(c.ville)}</span>
-        <span class="badge">Licenciés: ${esc(c.licences_total ?? 0)}</span>
-        <span class="badge">Jeunes: ${youth}</span>
-        <span class="badge">Arbitres: ${esc(c.nb_arbitres)}</span>
-      </div>
-    `;
-    div.addEventListener("click", () => {
-      map.setView([c.lat, c.lon], Math.max(map.getZoom(), 12), { animate: true });
-      clustersLayer.eachLayer(layer => {
-        const ll = layer.getLatLng?.();
-        if(ll && Math.abs(ll.lat - c.lat) < 1e-6 && Math.abs(ll.lng - c.lon) < 1e-6){
-          layer.openPopup();
-        if(window.innerWidth <= 720) closeSidebar();
-        }
-      });
+  elList.innerHTML = filtered.map(itemHtml).join("");
+  elList.querySelectorAll(".clubItem").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      const c = filtered.find(x => String(x.code_structure) === String(id));
+      if(!c) return;
+      map.setView([c.lat, c.lng], 11);
+      setTimeout(() => {
+        const popup = L.popup({maxWidth:430})
+          .setLatLng([c.lat, c.lng])
+          .setContent(makePopupHtml(c))
+          .openOn(map);
+      }, 120);
+      if(window.innerWidth < 1024){
+        elSidebar.classList.remove("open");
+        elOverlay.classList.remove("show");
+      }
     });
-    frag.appendChild(div);
   });
-  elList.appendChild(frag);
 }
 
-function applyFilters(){
-  const q = elSearch.value.trim().toLowerCase();
-  const onlyYouth = elOnlyYouth.checked;
-  const onlyRef = elOnlyRef.checked;
-  const dept = elDept?.value || "";
-  const practice = elPractice?.value || "";
+function renderStats(){
+  elStats.innerHTML = statsHtml(filtered);
+}
 
-  filtered = clubs.filter(c => {
-    if (q){
-      const hay = `${c.nom} ${c.ville} ${c.cp}`.toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    if (onlyYouth){
-      if (!(typeof c.pourcentage_jeunes === "number" && c.pourcentage_jeunes >= 30)) return false;
-    }
-    if (onlyRef && !c.a_arbitre) return false;
-    if (dept && String(c.departement||"") !== dept) return false;
-    if (practice){
-      const arr = c.pratiques || [];
-      if (!arr.includes(practice)) return false;
-    }
-    return true;
-  });
-
+function renderAll(){
   renderMarkers();
-  renderStats();
   renderList();
+  renderStats();
+  legendHtml();
 }
 
-async function main(){
-  initMap();
-  const res = await fetch("./clubs.json");
+async function loadData(){
+  const res = await fetch("./clubs.json", {cache:"no-store"});
+  if(!res.ok) throw new Error(`HTTP ${res.status}`);
   clubs = await res.json();
+
+  clubs = clubs.map(c => ({
+    ...c,
+    lat: Number(c.lat),
+    lng: Number(c.lng ?? c.lon),
+    licences_total: Number(c.licences_total || 0),
+    pct_femmes: Number(c.pct_femmes || 0),
+    pct_para: Number(c.pct_para || 0),
+    pct_jeunes_competiteurs_18m: Number(c.pct_jeunes_competiteurs_18m || 0),
+    a_arbitre: !!c.a_arbitre,
+    pratiques: Array.isArray(c.pratiques) ? c.pratiques : [],
+    arbitres: Array.isArray(c.arbitres) ? c.arbitres : [],
+    entraineurs: Array.isArray(c.entraineurs) ? c.entraineurs : [],
+    niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : []
+  })).filter(c => Number.isFinite(c.lat) && Number.isFinite(c.lng));
+
+  syncDeptAndPracticeOptions();
   filtered = clubs.slice();
+  recomputeScale();
+  renderAll();
+}
 
-  // Remplir listes déroulantes
-  const depts = Array.from(new Set(clubs.map(c => c.departement).filter(Boolean))).sort();
-  elDept.innerHTML = `<option value="">Tous</option>` + depts.map(d => `<option value="${esc(d)}">${esc(d)}</option>`).join("");
+function initMap(){
+  map = L.map("map", { zoomControl: true }).setView(MAP_CENTER, MAP_ZOOM);
 
-  const practices = Array.from(new Set(clubs.flatMap(c => c.pratiques || []).filter(Boolean))).sort((a,b)=>a.localeCompare(b,'fr'));
-  elPractice.innerHTML = `<option value="">Toutes</option>` + practices.map(p => `<option value="${esc(p)}">${esc(p)}</option>`).join("");
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
 
-  applyFilters();
+  plainLayer = L.layerGroup().addTo(map);
+  clustersLayer = L.markerClusterGroup({
+    showCoverageOnHover:false,
+    spiderfyOnMaxZoom:true,
+    maxClusterRadius: 50
+  });
+}
 
+function initUI(){
   elSearch.addEventListener("input", applyFilters);
   elOnlyYouth.addEventListener("change", applyFilters);
   elOnlyRef.addEventListener("change", applyFilters);
-  elDept && elDept.addEventListener("change", applyFilters);
-  elPractice && elPractice.addEventListener("change", applyFilters);
-  elClusterToggle && elClusterToggle.addEventListener("change", () => { renderMarkers(); });
+  elDept.addEventListener("change", applyFilters);
+  elPractice.addEventListener("change", applyFilters);
 
-  elModeButtons && elModeButtons.forEach(btn => {
+  if(elReset){
+    elReset.addEventListener("click", () => {
+      elSearch.value = "";
+      elOnlyYouth.checked = false;
+      elOnlyRef.checked = false;
+      elDept.value = "";
+      elPractice.value = "";
+      displayMode = "licences";
+      elModeButtons.forEach(b => b.classList.toggle("active", b.dataset.mode === displayMode));
+      if(elClusterToggle) elClusterToggle.checked = false;
+      applyFilters();
+    });
+  }
+
+  if(elPanelBtn){
+    elPanelBtn.addEventListener("click", () => {
+      elSidebar.classList.toggle("open");
+      elOverlay.classList.toggle("show");
+    });
+  }
+  if(elOverlay){
+    elOverlay.addEventListener("click", () => {
+      elSidebar.classList.remove("open");
+      elOverlay.classList.remove("show");
+    });
+  }
+
+  elModeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      elModeButtons.forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
       displayMode = btn.dataset.mode || "licences";
-      renderMarkers();
+      elModeButtons.forEach(b => b.classList.toggle("active", b === btn));
+      recomputeScale();
+      renderAll();
     });
   });
 
-  elPanelBtn && elPanelBtn.addEventListener('click', () => {
-    if(elSidebar?.classList.contains('open')) closeSidebar(); else openSidebar();
-  });
-  elOverlay && elOverlay.addEventListener('click', closeSidebar);
-
-  elReset.addEventListener("click", () => {
-    elSearch.value = "";
-    elOnlyYouth.checked = false;
-    elOnlyRef.checked = false;
-    if (elDept) elDept.value = "";
-    if (elPractice) elPractice.value = "";
-    displayMode = "licences";
-    if(elClusterToggle) elClusterToggle.checked = false;
-    elModeButtons && elModeButtons.forEach((b,i)=>{b.classList.toggle("active", i===0);});
-    applyFilters();
-    map.setView(MAP_CENTER, MAP_ZOOM);
-  });
+  if(elClusterToggle){
+    elClusterToggle.addEventListener("change", renderMarkers);
+  }
 }
 
-main().catch(err => { console.error(err); alert("Erreur au chargement des données (voir console)."); });
+(async function boot(){
+  try{
+    initMap();
+    initUI();
+    await loadData();
+  }catch(err){
+    console.error(err);
+    alert("Impossible de charger les données clubs.json");
+  }
+})();
