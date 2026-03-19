@@ -1,14 +1,29 @@
 /** 1. CONFIGURATION **/
 const MAP_CENTER = [47.35, -1.75];
 const MAP_ZOOM = 8;
+const RADIUS_KM = 20; // Rayon de recherche pour la géolocalisation (km)
+
 let map, clustersLayer, plainLayer, clubs = [], filtered = [];
 let displayMode = "licences"; // Mode par défaut
+let userCoords = null; // Pour stocker la position de l'utilisateur
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
   "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
 }[c]));
 
-/** 2. MOTEUR GRAPHIQUE (SVG pour les modes d'analyse) **/
+/** 2. UTILITAIRES DE CALCUL ET GRAPHIQUE **/
+
+// Calcule la distance en km entre deux points GPS (Haverstine)
+function getDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Rayon de la Terre en km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    return R * c;
+}
+
 function pieSvg(pct, color = "#2563eb", size = 40) {
     const p = Math.max(0, Math.min(100, Number(pct||0)));
     const r = 22, c = 2 * Math.PI * r;
@@ -46,7 +61,6 @@ function makePopupHtml(c) {
                 <div style="font-size:11px; color:#64748b;">${esc(c.ville)} • Prés : <strong>${esc(c.president || 'N/C')}</strong></div>
             </div>
         </div>
-
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:15px;">
             <div style="background:#eff6ff; padding:8px; border-radius:10px; text-align:center; border:1px solid #dbeafe;">
                 <div style="font-size:8px; font-weight:800; color:#1e40af;">LICENCIÉS</div>
@@ -65,16 +79,13 @@ function makePopupHtml(c) {
                 <div style="font-size:16px; font-weight:900; color:#9a3412;">${Math.round(c.pct_jeunes_competiteurs_18m || 0)}%</div>
             </div>
         </div>
-
         <div style="margin-bottom:12px;">${listP}</div>
-
         <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px; font-size:11px; max-height:150px; overflow-y:auto;">
             <div style="font-weight:800; text-transform:uppercase; color:#475569; margin-bottom:5px;">🎯 Technique</div>
             <ul style="margin:0 0 10px 0; padding-left:15px;">${listE}</ul>
             <div style="font-weight:800; text-transform:uppercase; color:#475569; margin-bottom:5px;">⚖️ Arbitres</div>
             <ul style="margin:0; padding-left:15px;">${listA}</ul>
         </div>
-
         <div style="margin-top:12px; display:flex; justify-content:center; gap:20px; border-top:1px solid #f1f5f9; padding-top:10px;">
             <a href="mailto:${esc(c.email)}" style="color:#002395; font-weight:800; text-decoration:none; font-size:12px;">✉ Mail</a>
             ${c.site ? `<a href="${esc(c.site)}" target="_blank" style="color:#002395; font-weight:800; text-decoration:none; font-size:12px;">🌐 Site</a>` : ''}
@@ -98,7 +109,15 @@ function applyFilters(){
         const okCoach = !coach || (c.niveaux_entraineurs && c.niveaux_entraineurs.some(n => n.niveau === coach));
         const okJeunes = !onlyJeunes || (c.pourcentage_jeunes > 0);
         const okArbitre = !withArbitre || (c.arbitres && c.arbitres.length > 0);
-        return okSearch && okDept && okPrac && okCoach && okJeunes && okArbitre;
+        
+        // CORRECTION GÉOLOCALISATION
+        let okDist = true;
+        if(userCoords) {
+            const d = getDistance(userCoords.lat, userCoords.lng, c.lat, c.lng);
+            okDist = d <= RADIUS_KM;
+        }
+
+        return okSearch && okDept && okPrac && okCoach && okJeunes && okArbitre && okDist;
     });
     renderAll();
 }
@@ -111,7 +130,6 @@ function renderAll(){
     
     filtered.forEach(c => {
         let m;
-        // GESTION DES MODES D'ANALYSE
         if (displayMode === "licences") {
             const color = "#002395";
             m = L.circleMarker([c.lat, c.lng], { radius: 8 + Math.sqrt(c.licences_total), color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.8 });
@@ -127,7 +145,6 @@ function renderAll(){
             });
             m = L.marker([c.lat, c.lng], { icon });
         }
-
         m.bindPopup(makePopupHtml(c), { maxWidth: 400 });
         if(isClustered && displayMode === "licences") clustersLayer.addLayer(m);
         else plainLayer.addLayer(m);
@@ -143,39 +160,15 @@ function renderAll(){
             <div style="background:#e6e9f5; color:#002395; font-weight:800; padding:4px 8px; border-radius:6px;">${c.licences_total}</div>
         </div>
     `).join("");
-    document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs affichés`;
+    document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs affichés ${userCoords ? `(dans un rayon de ${RADIUS_KM}km)` : ''}`;
 }
 
-/** 5. INIT & ÉCOUTEURS **/
-async function init() {
-    map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
-    plainLayer = L.layerGroup().addTo(map);
-    clustersLayer = L.markerClusterGroup().addTo(map);
+/** 5. INIT ET GÉOLOCALISATION **/
 
-    // Boutons de mode
-    document.querySelectorAll(".segBtn").forEach(btn => {
-        btn.onclick = () => {
-            displayMode = btn.dataset.mode;
-            document.querySelectorAll(".segBtn").forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            applyFilters();
-        };
-    });
-
-    const btn = document.getElementById('panelBtn'), side = document.querySelector('.sidebar'), over = document.getElementById('overlay');
-    btn.onclick = () => { side.classList.toggle('open'); over.classList.toggle('show'); };
-    over.onclick = () => { side.classList.remove('open'); over.classList.remove('show'); };
-
-    document.getElementById("searchValidate").onclick = applyFilters;
-    ["dept", "practice", "coachLevel", "clusterToggle", "checkJeunes", "checkArbitre"].forEach(id => {
-        document.getElementById(id).onchange = applyFilters;
-    });
-
+async function loadData() {
     try {
         const res = await fetch("./clubs.json");
         const data = await res.json();
-        
         clubs = data.map((c, i) => ({ 
             ...c, 
             id: c.id || i, 
@@ -197,6 +190,68 @@ async function init() {
 
         applyFilters();
     } catch (e) { console.error(e); }
+}
+
+async function init() {
+    map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+    plainLayer = L.layerGroup().addTo(map);
+    clustersLayer = L.markerClusterGroup().addTo(map);
+
+    // FIX : BOUTON MOBILE
+    const panelBtn = document.getElementById('panelBtn');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+    if(panelBtn) panelBtn.onclick = () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); };
+    if(overlay) overlay.onclick = () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); };
+
+    // FIX : BOUTONS DE MODE
+    document.querySelectorAll(".segBtn").forEach(btn => {
+        btn.onclick = () => {
+            displayMode = btn.dataset.mode;
+            document.querySelectorAll(".segBtn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            applyFilters();
+        };
+    });
+
+    // FIX : ÉCOUTEURS DES FILTRES
+    document.getElementById("searchValidate").onclick = applyFilters;
+    ["dept", "practice", "coachLevel", "clusterToggle", "checkJeunes", "checkArbitre"].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.onchange = applyFilters;
+    });
+
+    // --- MODULE GÉOLOCALISATION ---
+    const geoControl = L.control({ position: 'bottomright' });
+    geoControl.onAdd = function () {
+        const div = L.DomUtil.create('div', 'leaflet-control leaflet-bar L-geo-container');
+        div.innerHTML = `<button type="button" class="L-geo-btn" title="Trouver les clubs autour de moi">🎯</button>`;
+        div.onclick = function() {
+            if (!navigator.geolocation) return alert("Désolé, la géolocalisation n'est pas supportée par votre navigateur.");
+            div.classList.add('loading');
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    userCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+                    
+                    // Nettoyer ancienne position et marqueur
+                    plainLayer.clearLayers();
+                    L.marker([userCoords.lat, userCoords.lng], {
+                        icon: L.divIcon({ html:pieSvg(100, '#ef4444', 30), className:'', iconSize:[30,30] })
+                    }).bindPopup("<b>Vous êtes ici !</b>").addTo(plainLayer);
+
+                    applyFilters(); // Relance les filtres avec userCoords
+                    map.setView([userCoords.lat, userCoords.lng], 13);
+                    div.classList.remove('loading');
+                },
+                (err) => { console.error(err); alert("Impossible de vous localiser. Vérifiez vos autorisations."); div.classList.remove('loading'); }
+            );
+        };
+        return div;
+    };
+    geoControl.addTo(map);
+
+    await loadData(); // Charge les données après avoir tout initialisé
 }
 
 document.addEventListener("DOMContentLoaded", init);
