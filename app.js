@@ -1,16 +1,15 @@
-/** CONFIGURATION ET VARIABLES GLOBALES **/
+/** 1. CONFIGURATION & VARIABLES **/
 const MAP_CENTER = [47.35, -1.75];
 const MAP_ZOOM = 8;
 
 let map, clustersLayer, plainLayer, clubs = [], filtered = [];
-let displayMode = "licences"; // licences, femmes, para, jeunes
+let displayMode = "licences"; 
 
-// Utilitaire pour éviter les failles XSS et erreurs de caractères
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
   "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
 }[c]));
 
-/** 1. FONCTIONS DE RENDU (POPUP & DESSIN) **/
+/** 2. FONCTIONS DE RENDU (POPUP & ICONS) **/
 
 function labelBadge(label){
   if(!label) return "";
@@ -31,49 +30,47 @@ function pieSvg(pct, color = "#2563eb", size = 40){
   </svg>`;
 }
 
-function makePopupHtml(c){
-  return `
-  <div style="width: 280px; font-family: 'Inter', sans-serif;">
-    <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 8px;">
-      <img src="${c.logo_url || 'assets/logo_placeholder.svg'}" style="width: 45px; height: 45px; object-fit: contain;" onerror="this.src='assets/logo_placeholder.svg'">
-      <div style="min-width:0; flex:1">
-        <div style="font-weight: bold; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(c.nom)} ${labelBadge(c.label_club)}</div>
-        <div style="font-size: 11px; color: #666;">${esc(c.ville)} (${c.cp})</div>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
-        <div style="background:#eff6ff; padding:8px; border-radius:6px; text-align:center;">
-            <div style="font-size:9px; color:#1e40af; font-weight:700;">LICENCIÉS</div>
-            <div style="font-weight:800; font-size:15px; color:#1e40af;">${c.licences_total}</div>
+function makePopupHtml(c) {
+    const listEntraineurs = c.entraineurs && c.entraineurs.length 
+        ? c.entraineurs.map(e => `• ${esc(e.nom)} (${esc(e.diplome)})`).join("<br>")
+        : "<em>Aucun entraîneur</em>";
+
+    return `
+    <div style="width: 280px; font-family: 'Inter', sans-serif;">
+        <div style="display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 10px;">
+            <img src="${c.logo_url || 'assets/logo_placeholder.svg'}" style="width: 45px; height: 45px; object-fit: contain;">
+            <div style="min-width:0; flex:1">
+                <div style="font-weight: bold; font-size: 14px;">${esc(c.nom)} ${labelBadge(c.label_club)}</div>
+                <div style="font-size: 11px; color: #666;">${esc(c.ville)} • Prés : ${esc(c.president || 'N/C')}</div>
+            </div>
         </div>
-        <div style="background:#f0fdf4; padding:8px; border-radius:6px; text-align:center;">
-            <div style="font-size:9px; color:#166534; font-weight:700;">% JEUNES</div>
-            <div style="font-weight:800; font-size:15px; color:#166534;">${Math.round(c.pourcentage_jeunes)}%</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+            <div style="background:#eff6ff; padding:8px; border-radius:6px; text-align:center;">
+                <div style="font-size:9px; font-weight:700; color:#1e40af;">LICENCIÉS</div>
+                <div style="font-weight:800; font-size:15px; color:#1e40af;">${c.licences_total}</div>
+            </div>
+            <div style="background:#f0fdf4; padding:8px; border-radius:6px; text-align:center;">
+                <div style="font-size:9px; font-weight:700; color:#166534;">% JEUNES</div>
+                <div style="font-weight:800; font-size:15px; color:#166534;">${Math.round(c.pourcentage_jeunes)}%</div>
+            </div>
         </div>
-    </div>
-    <div style="font-size: 11px; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
-        <div style="font-weight:bold; margin-bottom:4px; color:#475569; text-transform:uppercase; font-size:9px;">Equipe technique :</div>
-        ${c.entraineurs && c.entraineurs.length ? c.entraineurs.map(e => `• ${esc(e.nom)} (${esc(e.diplome)})`).join("<br>") : "<em>Aucun entraîneur</em>"}
-    </div>
-    <div style="margin-top: 12px; display: flex; justify-content: center; gap: 15px; border-top: 1px solid #eee; padding-top: 8px;">
-        <a href="mailto:${esc(c.email)}" style="color: #2563eb; text-decoration: none; font-weight: bold; font-size: 12px;">✉ Email</a>
-        ${c.site ? `<a href="${esc(c.site)}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: bold; font-size: 12px;">🌐 Site Web</a>` : ''}
-    </div>
-  </div>`;
+        <div style="font-size: 11px; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; max-height: 80px; overflow-y: auto;">
+            <strong>Équipe technique :</strong><br>${listEntraineurs}
+        </div>
+        <div style="margin-top: 12px; display: flex; justify-content: space-around; border-top: 1px solid #eee; padding-top: 10px;">
+            <a href="mailto:${esc(c.email)}" style="color: #2563eb; text-decoration: none; font-weight: bold; font-size: 12px;">✉ Email</a>
+            ${c.site ? `<a href="${esc(c.site)}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: bold; font-size: 12px;">🌐 Site Web</a>` : ''}
+        </div>
+    </div>`;
 }
 
-/** 2. LOGIQUE DE FILTRAGE ET CARTE **/
+/** 3. FILTRES ET CARTE **/
 
 function applyFilters(){
-    const elSearch = document.getElementById("search");
-    const elDept = document.getElementById("dept");
-    const elPractice = document.getElementById("practice");
-    const elCoach = document.getElementById("coachLevel");
-
-    const q = elSearch ? elSearch.value.toLowerCase().trim() : "";
-    const dept = elDept ? elDept.value : "";
-    const practice = elPractice ? elPractice.value : "";
-    const coach = elCoach ? elCoach.value : "";
+    const q = document.getElementById("search")?.value.toLowerCase().trim() || "";
+    const dept = document.getElementById("dept")?.value || "";
+    const practice = document.getElementById("practice")?.value || "";
+    const coach = document.getElementById("coachLevel")?.value || "";
 
     filtered = clubs.filter(c => {
         const matchSearch = !q || `${c.nom} ${c.ville} ${c.cp}`.toLowerCase().includes(q);
@@ -87,10 +84,8 @@ function applyFilters(){
 
 function renderAll(){
     if(!map) return;
-    const elClusterToggle = document.getElementById("clusterToggle");
-    const elStats = document.getElementById("stats");
-    const elList = document.getElementById("list");
-
+    const isClustered = document.getElementById("clusterToggle")?.checked;
+    
     clustersLayer.clearLayers();
     plainLayer.clearLayers();
     
@@ -113,26 +108,14 @@ function renderAll(){
         }
 
         m.bindPopup(makePopupHtml(c));
-        
-        if(elClusterToggle && elClusterToggle.checked && displayMode === "licences") {
-            clustersLayer.addLayer(m);
-        } else {
-            plainLayer.addLayer(m);
-        }
+        if(isClustered && displayMode === "licences") clustersLayer.addLayer(m);
+        else plainLayer.addLayer(m);
     });
 
-    if(elStats) elStats.innerHTML = `<strong>${filtered.length}</strong> clubs trouvés`;
-    if(elList) {
-        const top = filtered.sort((a,b) => b.licences_total - a.licences_total).slice(0, 15);
-        elList.innerHTML = top.map(c => `
-            <div class="list-item" onclick="map.setView([${c.lat}, ${c.lng}], 13)" style="padding:12px; border-bottom:1px solid #f1f5f9; cursor:pointer;">
-                <div style="font-weight:700; font-size:12px; color:#1e293b;">${esc(c.nom)}</div>
-                <div style="font-size:11px; color:#64748b;">${esc(c.ville)} • ${c.licences_total} licenciés</div>
-            </div>`).join("");
-    }
+    document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs trouvés`;
 }
 
-/** 3. CHARGEMENT ET INITIALISATION **/
+/** 4. CHARGEMENT & INIT **/
 
 async function loadData() {
     try {
@@ -140,17 +123,15 @@ async function loadData() {
         const data = await res.json();
         clubs = data.map(c => ({
             ...c, 
-            lat: Number(c.lat), 
-            lng: Number(c.lon || c.lng),
+            lat: Number(c.lat), lng: Number(c.lon || c.lng),
             licences_total: Number(c.licences_total || 0),
             pourcentage_jeunes: Number(c.pourcentage_jeunes || 0),
             entraineurs: Array.isArray(c.entraineurs) ? c.entraineurs : [],
             pratiques: Array.isArray(c.pratiques) ? c.pratiques : [],
-            niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : [],
-            arbitres: Array.isArray(c.arbitres) ? c.arbitres : []
+            niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : []
         }));
 
-        // Remplissage dynamique des menus déroulants
+        // Remplissage selects
         const elDept = document.getElementById("dept");
         if(elDept) {
             const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
@@ -159,50 +140,36 @@ async function loadData() {
 
         const elCoach = document.getElementById("coachLevel");
         if(elCoach) {
-            const coachs = [...new Set(clubs.flatMap(c => c.niveaux_entraineurs.map(n => n.niveau)))].filter(Boolean).sort();
+            const coachs = [...new Set(clubs.flatMap(c => (c.niveaux_entraineurs || []).map(n => n.niveau)))].filter(Boolean).sort();
             elCoach.innerHTML = `<option value="">Tous les diplômes</option>` + coachs.map(l => `<option value="${l}">${l}</option>`).join("");
         }
 
         applyFilters();
-    } catch (e) {
-        console.error("Erreur critique au chargement du JSON :", e);
-        alert("Impossible de charger les données des clubs.");
-    }
+    } catch (e) { console.error("Erreur JSON:", e); }
 }
 
 function init() {
-    // Eviter les doubles initialisations
     if (map) return;
-
     map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
     L.control.zoom({ position: 'topright' }).addTo(map);
-    
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; CartoDB'
-    }).addTo(map);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
 
     plainLayer = L.layerGroup().addTo(map);
     clustersLayer = L.markerClusterGroup().addTo(map);
 
-    // Bouton Me Localiser
-    const b = document.createElement('button');
-    b.className = 'btn-locate'; b.innerHTML = '📍';
-    b.style.cssText = "position:absolute; bottom:25px; left:25px; z-index:500; width:45px; height:45px; border-radius:50%; border:none; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.2); cursor:pointer; font-size:20px;";
-    document.body.appendChild(b);
-    b.onclick = () => map.locate({setView: true, maxZoom: 13});
+    // Bouton Recherche
+    document.getElementById("searchValidate").onclick = () => {
+        applyFilters();
+        if(window.innerWidth < 1024) document.querySelector(".sidebar").classList.remove("open");
+    };
 
-    // Événements Recherche et Filtres
-    const elSearch = document.getElementById("search");
-    const elSearchBtn = document.getElementById("searchValidate");
-    if(elSearchBtn) elSearchBtn.onclick = applyFilters;
-    if(elSearch) elSearch.onkeypress = (e) => { if(e.key === "Enter") applyFilters(); };
-    
+    // Filtres automatiques
     ["dept", "practice", "coachLevel", "clusterToggle"].forEach(id => {
         const el = document.getElementById(id);
         if(el) el.onchange = applyFilters;
     });
 
-    // Boutons de Mode
+    // Onglets de mode
     document.querySelectorAll(".segBtn").forEach(btn => {
         btn.onclick = () => {
             displayMode = btn.dataset.mode;
@@ -212,19 +179,13 @@ function init() {
         };
     });
 
-    // Gestion Mobile
-    const elPanelBtn = document.getElementById("panelBtn");
-    const elSidebar = document.querySelector(".sidebar");
-    if(elPanelBtn && elSidebar) {
-        elPanelBtn.onclick = () => {
-            const open = elSidebar.classList.toggle("open");
-            document.getElementById("overlay").classList.toggle("show");
-            elPanelBtn.textContent = open ? "✖ Fermer" : "📊 Liste & Filtres";
-        };
-    }
+    // Toggle Mobile
+    document.getElementById("panelBtn").onclick = () => {
+        document.querySelector(".sidebar").classList.toggle("open");
+        document.getElementById("overlay").classList.toggle("show");
+    };
 
     loadData();
 }
 
-// Lancement au chargement du DOM
 document.addEventListener("DOMContentLoaded", init);
