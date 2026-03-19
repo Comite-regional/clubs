@@ -1,82 +1,9 @@
 const MAP_CENTER = [47.35, -1.75];
 const MAP_ZOOM = 8;
+let map, clustersLayer, plainLayer, clubs = [], filtered = [], displayMode = "licences";
 
-// Éléments
-const elSearch = document.getElementById("search");
-const elSearchBtn = document.getElementById("searchValidate");
-const elDept = document.getElementById("dept");
-const elPractice = document.getElementById("practice");
-const elCoachLevel = document.getElementById("coachLevel");
-const elStats = document.getElementById("stats");
-const elList = document.getElementById("list");
-const elPanelBtn = document.getElementById("panelBtn");
-const elSidebar = document.querySelector(".sidebar");
-const elOverlay = document.getElementById("overlay");
-const elClusterToggle = document.getElementById("clusterToggle");
-
-let map, clustersLayer, plainLayer, clubs = [], filtered = [];
-let displayMode = "licences";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
-  "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
-}[c]));
-
-// --- Logique des données ---
-
-function valueForMode(c){
-  if(displayMode==="femmes") return Number(c.pct_femmes||0);
-  if(displayMode==="para") return Number(c.pct_para||0);
-  if(displayMode==="jeunes") return Number(c.pourcentage_jeunes||0); // VRAI taux de jeunes
-  return Number(c.licences_total||0);
-}
-
-function getColorForMode(mode) {
-    switch(mode) {
-        case "femmes": return "#ec4899"; 
-        case "para": return "#10b981";    
-        case "jeunes": return "#3b82f6"; // Bleu pour les jeunes
-        default: return "#2563eb";      
-    }
-}
-
-// --- Filtres et Recherche ---
-
-function applyFilters(){
-  const q = (elSearch.value || "").toLowerCase().trim();
-  const dept = elDept.value;
-  const practice = elPractice.value;
-  const coachLvl = elCoachLevel.value;
-
-  filtered = clubs.filter(c => {
-    // RECHERCHE ETENDUE : Nom + Ville + CP
-    const searchString = `${c.nom} ${c.ville} ${c.cp}`.toLowerCase();
-    const okQ = !q || searchString.includes(q);
-    
-    const okDept = !dept || c.departement === dept;
-    
-    // FILTRE PRATIQUE
-    const okPrac = !practice || (Array.isArray(c.pratiques) && c.pratiques.includes(practice));
-    
-    // FILTRE ENTRAINEUR (Diplôme)
-    const okCoach = !coachLvl || (Array.isArray(c.niveaux_entraineurs) && c.niveaux_entraineurs.some(n => n.niveau === coachLvl));
-    
-    return okQ && okDept && okPrac && okCoach;
-  });
-
-  renderAll();
-}
-
-// --- UI et Carte ---
-
-function closeMobileMenu() {
-    if(window.innerWidth <= 1024) {
-        elSidebar.classList.remove("open");
-        elOverlay.classList.remove("show");
-        elPanelBtn.textContent = "📊 Liste & Filtres";
-    }
-}
-
-function init(){
+// Initialisation
+function init() {
     map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
     L.control.zoom({ position: 'topright' }).addTo(map);
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
@@ -84,26 +11,21 @@ function init(){
     plainLayer = L.layerGroup().addTo(map);
     clustersLayer = L.markerClusterGroup().addTo(map);
 
-    // Event Recherche (Touche Entrée)
-    elSearch.addEventListener("keypress", (e) => {
-        if(e.key === "Enter") {
-            applyFilters();
-            closeMobileMenu();
-        }
-    });
+    // Bouton Localisation
+    const btnLoc = document.createElement('button');
+    btnLoc.className = 'btn-locate'; btnLoc.innerHTML = '📍';
+    document.body.appendChild(btnLoc);
+    btnLoc.onclick = () => map.locate({setView: true, maxZoom: 13});
+    map.on('locationfound', (e) => L.marker(e.latlng).addTo(map).bindPopup("Vous êtes ici").openPopup());
 
-    // Event Recherche (Bouton Loupe)
-    elSearchBtn.onclick = () => {
-        applyFilters();
-        closeMobileMenu();
-    };
-
-    // Filtres Select
-    [elDept, elPractice, elCoachLevel].forEach(el => {
+    // Event listeners
+    document.getElementById("searchValidate").onclick = () => { applyFilters(); closeMobile(); };
+    document.getElementById("search").onkeypress = (e) => { if(e.key === "Enter") { applyFilters(); closeMobile(); } };
+    
+    [document.getElementById("dept"), document.getElementById("practice"), document.getElementById("coachLevel")].forEach(el => {
         el.onchange = applyFilters;
     });
 
-    // Modes d'affichage
     document.querySelectorAll(".segBtn").forEach(btn => {
         btn.onclick = () => {
             displayMode = btn.dataset.mode;
@@ -114,38 +36,59 @@ function init(){
     });
 
     // Toggle Mobile
-    elPanelBtn.onclick = () => {
-        const isOpen = elSidebar.classList.toggle("open");
-        elOverlay.classList.toggle("show");
-        elPanelBtn.textContent = isOpen ? "✖ Fermer" : "📊 Liste & Filtres";
+    document.getElementById("panelBtn").onclick = () => {
+        const open = document.querySelector(".sidebar").classList.toggle("open");
+        document.getElementById("overlay").classList.toggle("show");
+        document.getElementById("panelBtn").textContent = open ? "✖ Fermer" : "📊 Liste & Filtres";
     };
 
     loadData();
 }
 
-async function loadData(){
+function closeMobile() {
+    document.querySelector(".sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+}
+
+function applyFilters() {
+    const q = document.getElementById("search").value.toLowerCase().trim();
+    const d = document.getElementById("dept").value;
+    const p = document.getElementById("practice").value;
+    const cL = document.getElementById("coachLevel").value;
+
+    filtered = clubs.filter(c => {
+        const matchSearch = !q || `${c.nom} ${c.ville} ${c.cp}`.toLowerCase().includes(q);
+        const matchDept = !d || c.departement === d;
+        const matchPrac = !p || (c.pratiques && c.pratiques.includes(p));
+        const matchCoach = !cL || (c.niveaux_entraineurs && c.niveaux_entraineurs.some(n => n.niveau === cL));
+        return matchSearch && matchDept && matchPrac && matchCoach;
+    });
+    renderAll();
+}
+
+async function loadData() {
     const res = await fetch("./clubs.json");
     const data = await res.json();
-    
     clubs = data.map(c => ({
-        ...c,
-        lat: Number(c.lat), 
-        lng: Number(c.lon || c.lng),
-        niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : [],
-        pratiques: Array.isArray(c.pratiques) ? c.pratiques : []
+        ...c, lat: Number(c.lat), lng: Number(c.lon || c.lng),
+        licences_total: Number(c.licences_total || 0),
+        pourcentage_jeunes: Number(c.pourcentage_jeunes || 0)
     }));
 
-    // Remplissage dynamique des listes déroulantes
+    // Remplissage des selects
     const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
-    const practices = [...new Set(clubs.flatMap(c => c.pratiques))].filter(Boolean).sort();
-    const coachLvls = [...new Set(clubs.flatMap(c => c.niveaux_entraineurs.map(n => n.niveau)))].filter(Boolean).sort();
-
-    elDept.innerHTML = `<option value="">Département</option>` + depts.map(d => `<option value="${d}">${d}</option>`).join("");
-    elPractice.innerHTML = `<option value="">Toutes pratiques</option>` + practices.map(p => `<option value="${p}">${p}</option>`).join("");
-    elCoachLevel.innerHTML = `<option value="">Tous diplômes</option>` + coachLvls.map(l => `<option value="${l}">${l}</option>`).join("");
+    document.getElementById("dept").innerHTML = '<option value="">Département</option>' + depts.map(d => `<option value="${d}">${d}</option>`).join("");
+    
+    const coachs = [...new Set(clubs.flatMap(c => (c.niveaux_entraineurs || []).map(n => n.niveau)))].filter(Boolean).sort();
+    document.getElementById("coachLevel").innerHTML = '<option value="">Tous les diplômes</option>' + coachs.map(l => `<option value="${l}">${l}</option>`).join("");
 
     applyFilters();
 }
 
-// (Réutilisez vos fonctions renderAll, renderMarkers, createMarker, etc. de l'étape précédente)
-// ...
+// Réutiliser tes fonctions renderMarkers et makePopupHtml ici...
+function renderAll() {
+    renderMarkers(); 
+    document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs trouvés`;
+}
+
+document.addEventListener("DOMContentLoaded", init);
