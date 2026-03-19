@@ -2,22 +2,34 @@
 const MAP_CENTER = [47.35, -1.75];
 const MAP_ZOOM = 8;
 let map, clustersLayer, plainLayer, clubs = [], filtered = [];
-let displayMode = "licences"; 
+let displayMode = "licences"; // Mode par défaut
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
   "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
 }[c]));
 
-/** 2. MOTEUR GRAPHIQUE **/
+/** 2. MOTEUR GRAPHIQUE (SVG pour les modes d'analyse) **/
+function pieSvg(pct, color = "#2563eb", size = 40) {
+    const p = Math.max(0, Math.min(100, Number(pct||0)));
+    const r = 22, c = 2 * Math.PI * r;
+    const filled = c * (p/100);
+    return `
+    <svg viewBox="0 0 56 56" width="${size}" height="${size}" style="display:block">
+        <circle cx="28" cy="28" r="22" fill="none" stroke="#e2e8f0" stroke-width="9"></circle>
+        <circle cx="28" cy="28" r="22" fill="none" stroke="${color}" stroke-width="9"
+            stroke-linecap="round" stroke-dasharray="${filled} ${c-filled}" transform="rotate(-90 28 28)"></circle>
+        <text x="28" y="33" text-anchor="middle" font-size="11" font-weight="800" fill="#1e293b">${Math.round(p)}%</text>
+    </svg>`;
+}
+
 function labelBadge(label) {
     if (!label || label === "Non" || label === "Aucun") return "";
     let fileName = String(label).toLowerCase().replace("label ", "").trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '_'); 
     return `<img src="assets/label_${fileName}.png" title="${esc(label)}" style="height: 25px; margin-left: 10px; vertical-align: middle;">`;
 }
 
-/** 3. RENDU DU POPUP CORRIGÉ **/
+/** 3. RENDU DU POPUP **/
 function makePopupHtml(c) {
-    // Rétablissement des arbitres et entraîneurs
     const listE = c.entraineurs?.length ? c.entraineurs.map(e => `<li>${esc(e.nom)} <span style="color:#64748b">(${esc(e.diplome)})</span></li>`).join("") : "<li><em>Aucun</em></li>";
     const listA = c.arbitres?.length ? c.arbitres.map(a => `<li>${esc(a.nom)} <span style="color:#64748b">(${esc(a.niveau)})</span></li>`).join("") : "<li><em>Aucun</em></li>";
     const listP = c.pratiques?.length ? c.pratiques.map(p => `<span style="display:inline-block; background:#e2e8f0; padding:2px 8px; border-radius:10px; margin:2px; font-size:10px; font-weight:600;">${esc(p)}</span>`).join("") : "";
@@ -70,7 +82,7 @@ function makePopupHtml(c) {
     </div>`;
 }
 
-/** 4. LOGIQUE FILTRES **/
+/** 4. LOGIQUE FILTRES ET DESSIN CARTE **/
 function applyFilters(){
     const q = document.getElementById("search").value.toLowerCase().trim();
     const dept = document.getElementById("dept").value;
@@ -98,10 +110,26 @@ function renderAll(){
     plainLayer.clearLayers();
     
     filtered.forEach(c => {
-        const color = "#002395";
-        let m = L.circleMarker([c.lat, c.lng], { radius: 8 + Math.sqrt(c.licences_total), color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.8 });
+        let m;
+        // GESTION DES MODES D'ANALYSE
+        if (displayMode === "licences") {
+            const color = "#002395";
+            m = L.circleMarker([c.lat, c.lng], { radius: 8 + Math.sqrt(c.licences_total), color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.8 });
+        } else {
+            let pct = 0, color = "#2563eb";
+            if (displayMode === "femmes") { pct = c.pct_femmes; color = "#ec4899"; }
+            else if (displayMode === "para") { pct = c.pct_para; color = "#10b981"; }
+            else if (displayMode === "jeunes") { pct = c.pourcentage_jeunes; color = "#3b82f6"; }
+
+            const icon = L.divIcon({
+                html: `<div style="transform:translate(-20px,-20px)">${pieSvg(pct, color, 40)}</div>`,
+                className: '', iconSize: [40, 40]
+            });
+            m = L.marker([c.lat, c.lng], { icon });
+        }
+
         m.bindPopup(makePopupHtml(c), { maxWidth: 400 });
-        if(isClustered) clustersLayer.addLayer(m);
+        if(isClustered && displayMode === "licences") clustersLayer.addLayer(m);
         else plainLayer.addLayer(m);
     });
 
@@ -118,12 +146,22 @@ function renderAll(){
     document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs affichés`;
 }
 
-/** 5. INIT & CHARGEMENT DES FILTRES **/
+/** 5. INIT & ÉCOUTEURS **/
 async function init() {
     map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
     plainLayer = L.layerGroup().addTo(map);
     clustersLayer = L.markerClusterGroup().addTo(map);
+
+    // Boutons de mode
+    document.querySelectorAll(".segBtn").forEach(btn => {
+        btn.onclick = () => {
+            displayMode = btn.dataset.mode;
+            document.querySelectorAll(".segBtn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            applyFilters();
+        };
+    });
 
     const btn = document.getElementById('panelBtn'), side = document.querySelector('.sidebar'), over = document.getElementById('overlay');
     btn.onclick = () => { side.classList.toggle('open'); over.classList.toggle('show'); };
@@ -143,20 +181,22 @@ async function init() {
             id: c.id || i, 
             lat: Number(c.lat), 
             lng: Number(c.lon || c.lng),
-            arbitres: Array.isArray(c.arbitres) ? c.arbitres : [], // Sécurité
-            niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : [] // Sécurité
+            licences_total: Number(c.licences_total || 0),
+            pct_femmes: Number(c.pct_femmes || 0),
+            pct_para: Number(c.pct_para || 0),
+            pourcentage_jeunes: Number(c.pourcentage_jeunes || 0),
+            arbitres: Array.isArray(c.arbitres) ? c.arbitres : [],
+            niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : []
         }));
         
-        // Remplissage menu Départements
         const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
         document.getElementById("dept").innerHTML = `<option value="">Département</option>` + depts.map(d => `<option value="${d}">${d}</option>`).join("");
         
-        // CORRECTION : Remplissage menu Entraîneurs
-        const coachs = [...new Set(clubs.flatMap(c => c.niveaux_entraineurs.map(n => n.niveau)))].filter(Boolean).sort();
-        document.getElementById("coachLevel").innerHTML = `<option value="">Entraîneurs</option>` + coachs.map(l => `<option value="${l}">${l}</option>`).join("");
+        const coachLevels = [...new Set(clubs.flatMap(c => c.niveaux_entraineurs.map(n => n.niveau)))].filter(Boolean).sort();
+        document.getElementById("coachLevel").innerHTML = `<option value="">Entraîneurs</option>` + coachLevels.map(l => `<option value="${l}">${l}</option>`).join("");
 
         applyFilters();
-    } catch (e) { console.error("Erreur chargement JSON:", e); }
+    } catch (e) { console.error(e); }
 }
 
 document.addEventListener("DOMContentLoaded", init);
