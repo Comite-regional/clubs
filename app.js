@@ -50,47 +50,70 @@ function renderEntraineurs(c) {
   </ul>`;
 }
 
-function makePopupHtml(c){
-  const logo = c.logo_url 
-    ? `<img src="${esc(c.logo_url)}" onerror="this.src='assets/logo_placeholder.svg';" style="width: 45px; height: 45px; object-fit: contain; border-radius: 4px; background: #f1f5f9;" />` 
-    : `<div style="width: 45px; height: 45px; border-radius: 4px; background: #f1f5f9;"></div>`;
+function makePopupHtml(c) {
+    const logo = c.logo_url 
+        ? `<img src="${esc(c.logo_url)}" onerror="this.src='assets/logo_placeholder.svg';" style="width: 50px; height: 50px; object-fit: contain; border-radius: 4px; background: #f1f5f9;" />` 
+        : `<div style="width: 50px; height: 50px; border-radius: 4px; background: #f1f5f9; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:10px;">LOGO</div>`;
 
-  return `
-  <div style="width: 300px; font-family: sans-serif; color: #1e293b;">
-    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
-      ${logo}
-      <div style="min-width: 0; flex: 1;">
-        <div style="display: flex; align-items: center;">
-          <strong style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(c.nom)}</strong>
-          ${labelBadge(c.label_club)}
+    // Préparation des listes nominatives
+    const listEntraineurs = c.entraineurs && c.entraineurs.length 
+        ? c.entraineurs.map(e => `<li>${esc(e.nom)} <span style="color:#64748b">(${esc(e.diplome)})</span></li>`).join("")
+        : `<li style="color:#94a3b8; font-style:italic; list-style:none;">Aucun entraîneur recensé</li>`;
+
+    const listArbitres = c.arbitres && c.arbitres.length 
+        ? c.arbitres.map(a => `<li>${esc(a.nom)} <span style="color:#64748b">(${esc(a.niveau || 'Arbitre')})</span></li>`).join("")
+        : `<li style="color:#94a3b8; font-style:italic; list-style:none;">Aucun arbitre recensé</li>`;
+
+    return `
+    <div style="width: 320px; font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.4;">
+        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+            ${logo}
+            <div style="min-width: 0; flex: 1;">
+                <div style="display: flex; align-items: center; gap: 4px;">
+                    <strong style="font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">${esc(c.nom)}</strong>
+                    ${labelBadge(c.label_club)}
+                </div>
+                <div style="font-size: 11px; color: #64748b;">${esc(c.ville)} • Prés : ${esc(c.president || 'Non renseigné')}</div>
+            </div>
         </div>
-        <div style="font-size: 11px; color: #64748b;">${esc(c.ville)} (${c.cp})</div>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 8px;">
-      <div style="background:#f1f5f9; padding:5px; border-radius:4px; text-align:center;">
-        <div style="font-size:9px; color:#64748b;">TOTAL</div>
-        <div style="font-weight:bold; font-size:13px;">${c.licences_total}</div>
-      </div>
-      <div style="background:#f1f5f9; padding:5px; border-radius:4px; text-align:center;">
-        <div style="font-size:9px; color:#64748b;">JEUNES</div>
-        <div style="font-weight:bold; font-size:13px;">${Math.round(c.pourcentage_jeunes)}%</div>
-      </div>
-      <div style="background:#f1f5f9; padding:5px; border-radius:4px; text-align:center;">
-        <div style="font-size:9px; color:#64748b;">PARA</div>
-        <div style="font-weight:bold; font-size:13px;">${(c.pct_para || 0).toFixed(1)}%</div>
-      </div>
-    </div>
-    <div style="max-height: 100px; overflow-y: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin-top:5px;">
-      <div style="font-size: 10px; font-weight: bold; margin-bottom: 4px; color: #475569; text-transform:uppercase;">Entraîneurs</div>
-      ${renderEntraineurs(c)}
-    </div>
-    <div style="margin-top: 10px; text-align: center;">
-       <a href="mailto:${esc(c.email)}" style="font-size:11px; color:#2563eb; text-decoration:none; font-weight:bold;">Contacter le club</a>
-    </div>
-  </div>`;
-}
 
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 10px;">
+            <div style="background:#eff6ff; padding:6px; border-radius:6px; text-align:center; border: 1px solid #dbeafe;">
+                <div style="font-size:9px; font-weight:700; color:#1e40af; text-transform:uppercase;">Licenciés</div>
+                <div style="font-weight:800; font-size:14px; color:#1e40af;">${c.licences_total}</div>
+            </div>
+            <div style="background:#f0fdf4; padding:6px; border-radius:6px; text-align:center; border: 1px solid #dcfce7;">
+                <div style="font-size:9px; font-weight:700; color:#166534; text-transform:uppercase;">% Jeunes</div>
+                <div style="font-weight:800; font-size:14px; color:#166534;">${Math.round(c.pourcentage_jeunes)}%</div>
+            </div>
+            <div style="background:#fff7ed; padding:6px; border-radius:6px; text-align:center; border: 1px solid #ffedd5;">
+                <div style="font-size:9px; font-weight:700; color:#9a3412; text-transform:uppercase;">J. Compét.</div>
+                <div style="font-weight:800; font-size:14px; color:#9a3412;">${Math.round(c.pct_jeunes_competiteurs_18m || 0)}%</div>
+            </div>
+        </div>
+
+        <div style="max-height: 140px; overflow-y: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+            <div style="font-size: 10px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+                🎯 Équipe Technique
+            </div>
+            <ul style="margin: 0 0 10px 0; padding-left: 15px; font-size: 11px;">
+                ${listEntraineurs}
+            </ul>
+
+            <div style="font-size: 10px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+                ⚖️ Corps Arbitral
+            </div>
+            <ul style="margin: 0; padding-left: 15px; font-size: 11px;">
+                ${listArbitres}
+            </ul>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 15px; border-top: 1px solid #e2e8f0; pt: 8px; padding-top: 8px;">
+            ${c.site ? `<a href="${esc(c.site)}" target="_blank" style="font-size:12px; color:#2563eb; text-decoration:none; font-weight:bold; display:flex; align-items:center; gap:4px;">🌐 Site Web</a>` : ''}
+            <a href="mailto:${esc(c.email)}" style="font-size:12px; color:#2563eb; text-decoration:none; font-weight:bold; display:flex; align-items:center; gap:4px;">✉️ Email</a>
+        </div>
+    </div>`;
+}
 /** 2. LOGIQUE DE LA CARTE **/
 
 function getColorForMode(mode) {
@@ -191,14 +214,43 @@ function renderAll() {
 async function loadData() {
     const res = await fetch("./clubs.json");
     const data = await res.json();
+    
     clubs = data.map(c => ({
-        ...c, lat: Number(c.lat), lng: Number(c.lon || c.lng),
+        ...c, 
+        lat: Number(c.lat), 
+        lng: Number(c.lon || c.lng),
         licences_total: Number(c.licences_total || 0),
         pourcentage_jeunes: Number(c.pourcentage_jeunes || 0),
+        
+        // Sécurité pour les listes (si absentes du JSON, on crée un tableau vide)
         pratiques: Array.isArray(c.pratiques) ? c.pratiques : [],
         niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : [],
-        entraineurs: Array.isArray(c.entraineurs) ? c.entraineurs : []
+        entraineurs: Array.isArray(c.entraineurs) ? c.entraineurs : [],
+        
+        // AJOUT : On récupère la liste nominative des arbitres
+        arbitres: Array.isArray(c.arbitres) ? c.arbitres : []
     }));
+
+    // --- Remplissage dynamique des menus déroulants ---
+    
+    // Départements
+    const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
+    elDept.innerHTML = `<option value="">Département</option>` + 
+                       depts.map(d => `<option value="${d}">${d}</option>`).join("");
+    
+    // Pratiques (ex: Tir à l'arc extérieur, Salle, etc.)
+    const practices = [...new Set(clubs.flatMap(c => c.pratiques))].filter(Boolean).sort();
+    elPractice.innerHTML = `<option value="">Toutes pratiques</option>` + 
+                           practices.map(p => `<option value="${p}">${p}</option>`).join("");
+
+    // Diplômes d'entraîneurs
+    const coachs = [...new Set(clubs.flatMap(c => c.niveaux_entraineurs.map(n => n.niveau)))].filter(Boolean).sort();
+    elCoachLevel.innerHTML = `<option value="">Tous les diplômes</option>` + 
+                             coachs.map(l => `<option value="${l}">${l}</option>`).join("");
+
+    // Une fois les données prêtes, on affiche
+    applyFilters();
+}
 
     // Remplir les selects dynamiquement
     const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
