@@ -1,15 +1,18 @@
-/* 1. VARIABLES & RESET */
+/* 1. CONFIGURATION GÉNÉRALE */
 :root {
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
-    --accent: #f59e0b;
-    --dark: #0f172a;
+    --primary-light: #dbeafe;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #1e293b;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
     --gray-600: #475569;
     --white: #ffffff;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --radius: 12px;
 }
 
@@ -17,48 +20,44 @@
 
 body, html { 
     margin: 0; padding: 0; height: 100%; 
-    font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+    font-family: 'Inter', sans-serif; 
     background: var(--gray-50); 
     color: var(--dark); 
     overflow: hidden; 
 }
 
-/* 2. LAYOUT PRINCIPAL */
+/* 2. LAYOUT */
 .main-container { 
     display: flex; 
     height: 100vh; 
     width: 100vw; 
-    flex-direction: row-reverse; /* Carte à gauche, Barre à droite */
+    flex-direction: row-reverse; /* Carte à gauche, Barre à droite en Desktop */
 }
 
 #map { 
     flex: 1; 
     z-index: 1; 
-    background: var(--gray-200); 
 }
 
-/* 3. SIDEBAR (Barre latérale) */
+/* 3. SIDEBAR */
 .sidebar {
     width: 380px;
     background: var(--white);
     display: flex;
     flex-direction: column;
     z-index: 100;
-    box-shadow: -4px 0 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.05);
 }
 
 .sidebar-header { 
-    padding: 24px; 
-    border-bottom: 1px solid var(--gray-200); 
+    padding: 25px; 
     background: var(--primary); 
     color: var(--white); 
 }
 
-.sidebar-header h1 { margin: 0; font-size: 1.25rem; font-weight: 800; }
-.sidebar-header p { margin: 4px 0 0; opacity: 0.8; font-size: 0.85rem; }
+.sidebar-header h1 { margin: 0; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.sidebar-header p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; }
 
-/* 4. ZONE DE FILTRES */
 .filters-area { 
     padding: 20px; 
     overflow-y: auto; 
@@ -66,59 +65,60 @@ body, html {
 }
 
 .filter-section-title { 
-    font-size: 0.7rem; 
-    font-weight: 700; 
+    font-size: 0.75rem; 
+    font-weight: 800; 
     color: var(--gray-600); 
     text-transform: uppercase; 
     margin: 20px 0 10px; 
     letter-spacing: 0.05em; 
 }
 
-/* Recherche avec loupe intégrée */
+/* 4. COMPOSANTS FORMULAIRE */
 .search-wrapper { 
     display: flex; 
-    gap: 5px; 
+    gap: 8px; 
     margin-bottom: 15px; 
 }
 
 #search { 
     flex: 1; 
-    padding: 12px; 
-    border: 1.5px solid var(--gray-200); 
-    border-radius: 8px; 
+    padding: 12px 15px; 
+    border: 2px solid var(--gray-100); 
+    border-radius: var(--radius); 
     font-size: 0.9rem; 
-    transition: border 0.2s;
+    transition: all 0.2s;
 }
 
-#search:focus { border-color: var(--primary); outline: none; }
+#search:focus { border-color: var(--primary); outline: none; background: var(--white); }
 
 #searchValidate {
     background: var(--primary);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 0 15px;
+    border-radius: var(--radius);
+    width: 45px;
     cursor: pointer;
-    font-size: 1.1rem;
+    transition: background 0.2s;
 }
 
-/* Boutons de Mode (Onglets) */
+#searchValidate:hover { background: var(--primary-dark); }
+
+/* Onglets de mode */
 .mode-tabs { 
     display: flex; 
     background: var(--gray-100); 
     padding: 4px; 
-    border-radius: 10px; 
-    margin-bottom: 15px; 
+    border-radius: var(--radius); 
     gap: 2px;
 }
 
 .segBtn { 
     flex: 1; 
     border: none; 
-    padding: 8px 4px; 
-    border-radius: 7px; 
-    font-size: 0.7rem; 
-    font-weight: 600; 
+    padding: 10px 5px; 
+    border-radius: 9px; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
     cursor: pointer; 
     color: var(--gray-600); 
     background: transparent; 
@@ -128,10 +128,10 @@ body, html {
 .segBtn.active { 
     background: var(--white); 
     color: var(--primary); 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
 }
 
-/* Grilles de sélection */
+/* Grilles & Selects */
 .grid-2 { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -140,79 +140,125 @@ body, html {
 }
 
 select { 
+    width: 100%;
     padding: 10px; 
-    border: 1.5px solid var(--gray-200); 
-    border-radius: 8px; 
+    border: 2px solid var(--gray-100); 
+    border-radius: 10px; 
     background: var(--white); 
-    font-size: 0.8rem; 
-    color: var(--dark);
+    font-size: 0.85rem; 
+    font-weight: 500;
     cursor: pointer;
 }
 
-/* 5. LISTE DES CLUBS */
-.stats-counter {
-    padding: 10px 0;
-    font-weight: bold;
-    color: var(--primary);
-    font-size: 0.9rem;
-    border-bottom: 1px solid var(--gray-100);
+/* Checkboxes style encart */
+.checkbox-group {
+    display: flex; 
+    gap: 15px; 
+    margin-top: 10px; 
+    padding: 12px; 
+    background: var(--gray-50); 
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
 }
 
-.club-list { margin-top: 10px; }
+/* 5. STATS & LISTE */
+.stats-counter {
+    padding: 15px 0;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.club-list { 
+    margin-top: 10px; 
+}
 
 .list-item {
-    padding: 12px;
-    border-radius: 8px;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
     margin-bottom: 8px;
-    background: var(--gray-50);
-    border: 1px solid transparent;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 .list-item:hover {
-    background: var(--white);
-    border-color: var(--primary-light);
+    border-color: var(--primary);
+    transform: translateX(5px);
     box-shadow: var(--shadow);
-    transform: translateY(-2px);
 }
 
-/* 6. BOUTONS FLOTTANTS & MOBILES */
-.btn-locate { 
-    position: absolute; bottom: 25px; left: 25px; z-index: 500;
-    background: var(--white); border: none; width: 48px; height: 48px; border-radius: 50%;
-    box-shadow: var(--shadow); cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; transition: transform 0.2s;
+.btn-reset {
+    margin-top: 15px; 
+    width: 100%; 
+    padding: 12px; 
+    border: none; 
+    border-radius: var(--radius);
+    background: var(--gray-100); 
+    color: var(--gray-600); 
+    font-weight: 800; 
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.btn-locate:hover { transform: scale(1.1); color: var(--primary); }
-
+/* 6. RESPONSIVE & BOUTONS MOBILES */
 .mobile-toggle-bar { 
-    display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-    z-index: 1001; background: var(--dark); color: white; padding: 14px 28px;
-    border-radius: 50px; border: none; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: none; 
+    position: fixed; 
+    bottom: 25px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 1001; 
+    background: var(--dark); 
+    color: white; 
+    padding: 16px 32px;
+    border-radius: 50px; 
+    border: none; 
+    font-weight: 800; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     cursor: pointer;
 }
 
 .overlay {
-    display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(4px); z-index: 90;
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px); 
+    z-index: 90;
 }
 
-.btn-reset {
-    margin-top: 20px; width: 100%; padding: 12px; border: none; border-radius: 8px;
-    background: var(--gray-100); color: var(--gray-600); font-weight: bold; cursor: pointer;
-}
-
-/* 7. ADAPTATION MOBILE */
 @media (max-width: 1024px) {
     .sidebar { 
-        position: fixed; right: 0; top: 0; height: 100%; 
-        transform: translateX(100%); width: 85%; max-width: 400px;
+        position: fixed; 
+        right: 0; 
+        top: 0; 
+        height: 100%; 
+        transform: translateX(100%); 
+        width: 85%; 
+        max-width: 400px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .sidebar.open { transform: translateX(0); }
     .mobile-toggle-bar { display: block; }
     .overlay.show { display: block; }
+    .main-container { flex-direction: column; }
 }
 
-/* Styles Leaflet pour les camemberts */
-.marker-pie { background: none; border: none; }
+/* 7. LEAFLET POPUP CUSTOM */
+.leaflet-popup-content-wrapper {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 450px !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #fff;
+    padding: 10px;
+}
