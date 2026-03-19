@@ -20,6 +20,7 @@
         "niveau": "DEJEPS",
         "nb": 1
       },  
+      
       {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
@@ -51,7 +52,7 @@
       "Campagne"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 3,
     "president": "Mme BOQUET MELANIE",
     "arbitres": [
       {
@@ -72,6 +73,7 @@
         "nom": "CADORET Franck",
         "diplome": "DEJEPS"
       },
+      
       {
         "nom": "RONDINEAU Thomas",
         "diplome": "Entraîneur Fédéral"
