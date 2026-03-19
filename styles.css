@@ -25,7 +25,7 @@ body, html {
 .main-container { display: flex; height: 100vh; width: 100vw; flex-direction: row-reverse; }
 #map { flex: 1; z-index: 1; }
 
-/* SIDEBAR */
+/* SIDEBAR ET HEADER */
 .sidebar {
     width: 380px; background: var(--white);
     display: flex; flex-direction: column;
@@ -33,11 +33,19 @@ body, html {
 }
 
 .sidebar-header { 
-    padding: 20px; background: var(--primary); 
+    padding: 15px 20px; background: var(--primary); 
     color: var(--white); display: flex; align-items: center; gap: 15px;
 }
 
-.sidebar-logo { height: 45px; width: auto; border-radius: 4px; }
+/* FIX DU LOGO REGION */
+.sidebar-logo { 
+    height: 40px; 
+    width: auto; 
+    object-fit: contain; 
+    background: white; 
+    padding: 2px; 
+    border-radius: 4px;
+}
 .sidebar-header h1 { margin: 0; font-size: 1.2rem; font-weight: 800; }
 .sidebar-header p { margin: 0; opacity: 0.9; font-size: 0.85rem; }
 
@@ -60,29 +68,33 @@ select { width: 100%; padding: 10px; border: 2px solid var(--gray-100); border-r
 .checkbox-row label { font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 5px; cursor: pointer; }
 
 .btn-reset { margin-top: 15px; width: 100%; padding: 12px; border: none; border-radius: var(--radius); background: var(--gray-100); color: var(--gray-600); font-weight: 800; cursor: pointer; }
+.separator { margin: 20px 0; border: 0; border-top: 1px solid #eee; }
 .stats-counter { padding: 15px 0; font-weight: 700; color: var(--primary); text-align: center; }
 
 /* LISTE */
-.list-item { background: var(--white); border: 1px solid var(--gray-100); border-radius: 10px; margin-bottom: 8px; transition: 0.2s; }
+.list-item { background: var(--white); border: 1px solid var(--gray-100); border-radius: 10px; margin-bottom: 8px; transition: 0.2sease; }
 .list-item:hover { border-color: var(--primary); transform: translateX(5px); }
 
 /* LEAFLET CUSTOM */
 .leaflet-popup-content-wrapper { border-radius: 15px; padding: 0; }
-.leaflet-popup-content { margin: 0; width: 380px !important; }
-.leaflet-container a.leaflet-popup-close-button { 
-    color: var(--danger) !important; 
-    font-size: 24px !important; 
-    font-weight: 900 !important; 
-    padding: 8px 12px 0 0 !important;
-}
+.leaflet-popup-content { margin: 0; min-width: 320px !important; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--danger) !important; font-size: 24px !important; font-weight: 900 !important; padding: 8px 12px 0 0 !important;}
 
 /* MOBILE */
 .mobile-toggle-bar { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1001; background: var(--dark); color: white; padding: 15px 30px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer; }
 .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
 
 @media (max-width: 1024px) {
-    .sidebar { position: fixed; right: 0; top: 0; height: 100%; transform: translateX(100%); width: 85%; transition: 0.3s; }
+    .sidebar { position: fixed; right: 0; top: 0; height: 100%; transform: translateX(100%); width: 85%; max-width: 400px;transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000;}
     .sidebar.open { transform: translateX(0); }
     .mobile-toggle-bar { display: block; }
     .overlay.show { display: block; }
 }
+
+/* --- FIX GÉOLOCALISATION --- */
+.L-geo-container { border: none !important; background: transparent !important; box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;}
+.L-geo-btn { 
+    background: white; border: none; border-radius: 8px; font-size: 20px; width: 40px; height: 40px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.2s ease;}
+.L-geo-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+.loading .L-geo-btn { animation: pulse 1s infinite; background: #e2e8f0; pointer-events: none;}
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
