@@ -12,10 +12,27 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
 /** 2. MOTEUR GRAPHIQUE **/
 
 function labelBadge(label) {
-    if (!label || label === "Non") return "";
-    // On adapte le nom du label pour correspondre au nom de fichier image (ex: "Label Citoyen" -> "citoyen")
-    const key = String(label).toLowerCase().replace("label ", "").trim();
-    return `<img src="assets/label_${key}.png" title="${esc(label)}" style="height: 24px; vertical-align: middle; margin-left: 8px;" onerror="this.style.display='none'">`;
+    // Si la donnée est vide, "Non", ou inexistante, on ne renvoie rien
+    if (!label || label === "Non" || label === "" || label === "Aucun") return "";
+    
+    // NETTOYAGE DU TEXTE :
+    // 1. On met tout en minuscule
+    // 2. On enlève "label " si c'est écrit au début
+    // 3. On enlève les accents (é -> e)
+    // 4. On remplace les espaces par des underscores _
+    let fileName = String(label)
+        .toLowerCase()
+        .replace("label ", "")
+        .trim()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, '_'); 
+    
+    const src = `assets/label_${fileName}.png`;
+    
+    // On retourne l'image avec un titre au survol (tooltip)
+    return `<img src="${src}" title="${esc(label)}" 
+        style="height: 25px; width: auto; vertical-align: middle; margin-left: 10px; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));" 
+        onerror="console.warn('Fichier manquant dans /assets/ :', '${src}'); this.style.display='none';">`;
 }
 
 function pieSvg(pct, color = "#2563eb", size = 40, showText = true) {
