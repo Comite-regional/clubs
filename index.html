@@ -7,76 +7,100 @@ Reproduction interdite sans autorisation.
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stats Clubs Tir à l'Arc - Pays de la Loire</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatoire Tir à l'Arc — Pays de la Loire</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="main-container">
-    <div id="map"></div>
-
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h1>Statistiques Clubs</h1>
-        <p>Pays de la Loire</p>
-      </div>
-
-      <div class="filters">
-        <input type="text" id="search" placeholder="Rechercher un club, une ville...">
+    <div class="main-container">
+        <div id="map"></div>
         
-        <div class="filter-group">
-          <select id="dept">
-            <option value="">Tous départements</option>
-          </select>
-          <select id="practice">
-            <option value="">Toutes pratiques</option>
-          </select>
-        </div>
+        <div id="overlay" class="overlay"></div>
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/logo_cr_pdl.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);">
+                    <div>
+                        <h1>Tir à l'Arc</h1>
+                        <p>Pays de la Loire</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filters-area">
+                <div class="filter-section-title">Recherche rapide</div>
+                <div class="search-wrapper">
+                    <input type="text" id="search" placeholder="Nom du club, ville, président...">
+                </div>
 
-        <div class="filter-group">
-          <select id="coachLevel">
-            <option value="">Tous les diplômes</option>
-          </select>
-        </div>
+                <div class="filter-section-title">Mode d'analyse</div>
+                <div class="mode-tabs">
+                    <button class="segBtn active" data-mode="licences">Effectifs</button>
+                    <button class="segBtn" data-mode="femmes">% Femmes</button>
+                    <button class="segBtn" data-mode="para">% Para</button>
+                    <button class="segBtn" data-mode="jcomp">% Jeunes</button>
+                </div>
 
-        <div class="checkbox-group">
-          <label><input type="checkbox" id="onlyYouth"> Section Jeunes</label>
-          <label><input type="checkbox" id="onlyRef"> Avec Arbitre</label>
-        </div>
+                <div class="filter-section-title">Filtres géographiques & techniques</div>
+                <div class="grid-2">
+                    <select id="dept">
+                        <option value="">Département</option>
+                    </select>
+                    <select id="coachLevel">
+                        <option value="">Diplôme (Entraîneur)</option>
+                    </select>
+                </div>
 
-        <div class="mode-selector">
-          <button class="segBtn active" data-mode="licences">Licenciés</button>
-          <button class="segBtn" data-mode="femmes">% Femmes</button>
-          <button class="segBtn" data-mode="para">% Para</button>
-        </div>
+                <div class="grid-2">
+                    <select id="practice">
+                        <option value="">Pratique</option>
+                    </select>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="clusterToggle">
+                        <label for="clusterToggle" style="font-size: 11px; font-weight: 600;">Grouper</label>
+                    </div>
+                </div>
 
-        <div class="cluster-toggle">
-          <label><input type="checkbox" id="clusterToggle"> Grouper les points</label>
-        </div>
+                <div class="checkbox-group" style="margin-top: 15px; display: flex; gap: 15px;">
+                    <label style="font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox" id="onlyYouth"> Section Jeunes
+                    </label>
+                    <label style="font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox" id="onlyRef"> Avec Arbitre
+                    </label>
+                </div>
 
-        <button id="reset" class="btn-reset">Réinitialiser les filtres</button>
-      </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
-      <div id="stats" class="stats-container"></div>
-      
-      <div id="list" class="club-list">
-        </div>
-    </aside>
+                <div id="stats"></div>
+                
+                <div id="list" class="club-list">
+                    </div>
+                
+                <button id="reset" class="btn-reset" style="margin-top: 20px; width: 100%; padding: 12px; border: none; border-radius: 8px; background: #f1f5f9; color: #475569; font-weight: bold; cursor: pointer;">
+                    Réinitialiser tous les filtres
+                </button>
+            </div>
+        </aside>
 
-    <button id="panelBtn" class="mobile-toggle">📊 Liste & Filtres</button>
-    <div id="overlay" class="overlay"></div>
-  </div>
+        <button id="panelBtn" class="mobile-toggle-bar">📊 Liste & Filtres</button>
+    </div>
 
-  <div id="legend" class="map-legend"></div>
+    <div id="legend" class="map-legend" style="position: absolute; bottom: 30px; right: 430px; z-index: 500; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 12px; font-weight: 600;"></div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-  <script src="app.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="app.js"></script>
 </body>
   <footer>
   © 2026 CY'ARC — Tous droits réservés
