@@ -529,6 +529,10 @@
     "nb_arbitres": 4,
     "a_arbitre": true,
     "niveaux_entraineurs": [
+     {
+        "niveau": "DEJEPS",
+        "nb": 1
+      },
       {
         "niveau": "Entraîneur 2",
         "nb": 1
@@ -579,7 +583,7 @@
       "Run Archery"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 6,
+    "nb_entraineurs": 7,
     "president": "M LE GUE Ioan",
     "arbitres": [
       {
@@ -600,6 +604,10 @@
       }
     ],
     "entraineurs": [
+      {
+        "nom": "CADORET Franck",
+        "diplome": "DEJEPS"
+      },
       {
         "nom": "BOUCHART Jean Luc",
         "diplome": "Entraîneur 2"
@@ -644,10 +652,6 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
-        "niveau": "DEJEPS",
-        "nb": 1
-      },
-      {
         "niveau": "Initiateur",
         "nb": 1
       }
@@ -673,7 +677,7 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 2,
+    "nb_entraineurs": 1,
     "president": "M CADORET ROMUALD",
     "arbitres": [
       {
@@ -686,10 +690,6 @@
       }
     ],
     "entraineurs": [
-      {
-        "nom": "CADORET Franck",
-        "diplome": "DEJEPS"
-      },
       {
         "nom": "CADORET Romuald",
         "diplome": "Initiateur"
@@ -4643,6 +4643,10 @@
     "nb_arbitres": 3,
     "a_arbitre": true,
     "niveaux_entraineurs": [
+     {
+        "niveau": "DEJEPS",
+        "nb": 1
+      },
       {
         "niveau": "CQP Animateur Tir à l'Arc",
         "nb": 1
@@ -4681,7 +4685,7 @@
       "Beursault"
     ],
     "discipline_principale": null,
-    "nb_entraineurs": 5,
+    "nb_entraineurs": 6,
     "president": "Mme TESSIER Geraldine",
     "arbitres": [
       {
@@ -4698,6 +4702,10 @@
       }
     ],
     "entraineurs": [
+     {
+        "nom": "HALNA DENIS",
+        "diplome": "DEJEPS"
+      },
       {
         "nom": "GUY Oceane",
         "diplome": "CQP Animateur Tir à l'Arc"
@@ -6436,7 +6444,7 @@
       },
       {
         "niveau": "Entraîneur Fédéral",
-        "nb": 1
+        "nb": 3
       },
       {
         "niveau": "Entraîneur 1",
@@ -6487,11 +6495,11 @@
     "entraineurs": [
       {
         "nom": "BEGOC Anne-Gaelle",
-        "diplome": "CQP Animateur Tir à l'Arc"
+        "diplome": "CQP Animateur Tir à l'Arc", "Entraîneur Fédéral"
       },
       {
         "nom": "EISENBETH Michael",
-        "diplome": "CQP Animateur Tir à l'Arc"
+        "diplome": "CQP Animateur Tir à l'Arc", "Entraîneur Fédéral"
       },
       {
         "nom": "GRUDE-DELAROUX Pierre",
