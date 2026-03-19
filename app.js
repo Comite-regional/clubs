@@ -278,3 +278,79 @@ function init(){
 }
 
 document.addEventListener("DOMContentLoaded", init);
+// ... (Gardez vos variables globales en haut)
+
+function init(){
+    map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM); // Zoom control à droite pour plus de pro
+    L.control.zoom({ position: 'topright' }).addTo(map);
+
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+        attribution: '&copy; CartoDB'
+    }).addTo(map);
+
+    // AJOUT : Bouton Me Localiser
+    const locateBtn = document.createElement('button');
+    locateBtn.className = 'btn-locate';
+    locateBtn.innerHTML = '📍';
+    locateBtn.title = 'Me localiser';
+    document.body.appendChild(locateBtn);
+
+    locateBtn.onclick = () => {
+        map.locate({setView: true, maxZoom: 13});
+    };
+
+    map.on('locationfound', (e) => {
+        L.marker(e.latlng).addTo(map).bindPopup("Vous êtes ici").openPopup();
+    });
+
+    map.on('locationerror', () => alert("Localisation refusée ou impossible."));
+
+    // CORRECTION : Bouton Liste & Filtres Mobile
+    const btnMobile = document.getElementById("panelBtn");
+    const sidebar = document.querySelector(".sidebar");
+    const overlay = document.getElementById("overlay");
+
+    if(btnMobile) {
+        btnMobile.onclick = (e) => {
+            e.preventDefault();
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+            btnMobile.textContent = sidebar.classList.contains("open") ? "✖ Fermer" : "📊 Liste & Filtres";
+        };
+    }
+
+    if(overlay) {
+        overlay.onclick = () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+            btnMobile.textContent = "📊 Liste & Filtres";
+        };
+    }
+
+    // Le reste de votre logique d'initialisation (loadData, etc.)
+    plainLayer = L.layerGroup().addTo(map);
+    clustersLayer = L.markerClusterGroup().addTo(map);
+    
+    // Attacher les events de filtres
+    setupEventListeners();
+    loadData();
+}
+
+function setupEventListeners() {
+    [elSearch, elDept, elPractice, elCoachLevel].forEach(el => {
+        if(el) el.addEventListener("input", applyFilters);
+        if(el && el.tagName === "SELECT") el.addEventListener("change", applyFilters);
+    });
+    
+    // Boutons de mode
+    document.querySelectorAll(".segBtn").forEach(btn => {
+        btn.onclick = () => {
+            displayMode = btn.dataset.mode;
+            document.querySelectorAll(".segBtn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            applyFilters();
+        };
+    });
+}
+
+// ... (Gardez vos fonctions de rendu popup/marqueurs de l'étape précédente)
