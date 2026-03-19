@@ -9,7 +9,7 @@ Reproduction interdite sans autorisation.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Observatoire Tir à l'Arc — Pays de la Loire</title>
+    <title>Observatoire Tir à l'Arc — PDL</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
@@ -17,7 +17,6 @@ Reproduction interdite sans autorisation.
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="main-container">
         <div id="map"></div>
         <div id="overlay" class="overlay"></div>
@@ -29,37 +28,36 @@ Reproduction interdite sans autorisation.
             </div>
             
             <div class="filters-area">
-                <div class="filter-section-title">Recherche rapide</div>
-                <div class="search-wrapper" style="display: flex; gap: 5px;">
-                    <input type="text" id="search" placeholder="Nom, Ville, CP..." style="flex: 1;">
-                    <button id="searchValidate" style="background: var(--primary); border: none; border-radius: 8px; color: white; padding: 0 15px; cursor: pointer;">🔍</button>
+                <div class="filter-section-title">Recherche (Nom, Ville, CP)</div>
+                <div class="search-wrapper">
+                    <input type="text" id="search" placeholder="Ex: Nantes, Guérande...">
+                    <button id="searchValidate">🔍</button>
                 </div>
 
-                <div class="filter-section-title">Mode d'analyse (Carte)</div>
+                <div class="filter-section-title">Mode d'analyse Carte</div>
                 <div class="mode-tabs">
                     <button class="segBtn active" data-mode="licences">Effectifs</button>
                     <button class="segBtn" data-mode="femmes">% Femmes</button>
                     <button class="segBtn" data-mode="para">% Para</button>
-                    <button class="segBtn" data-mode="jeunes">% Jeunes</button> </div>
-
-                <div class="filter-section-title">Filtres techniques</div>
-                <div class="grid-2">
-                    <select id="dept"><option value="">Département</option></select>
-                    <select id="coachLevel"><option value="">Diplôme Entraîneur</option></select>
+                    <button class="segBtn" data-mode="jeunes">% Jeunes</button>
                 </div>
 
+                <div class="filter-section-title">Filtres avancés</div>
                 <div class="grid-2">
-                    <select id="practice"><option value="">Pratique spécifique</option></select>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <input type="checkbox" id="clusterToggle">
-                        <label for="clusterToggle" style="font-size: 11px; font-weight: 600;">Grouper</label>
+                    <select id="dept"><option value="">Département</option></select>
+                    <select id="coachLevel"><option value="">Entraîneurs</option></select>
+                </div>
+                <div class="grid-2">
+                    <select id="practice"><option value="">Pratiques</option></select>
+                    <div class="toggle-wrap">
+                        <input type="checkbox" id="clusterToggle"> <label for="clusterToggle">Grouper</label>
                     </div>
                 </div>
 
-                <div id="stats" style="margin: 15px 0; font-weight: bold; color: var(--primary);"></div>
+                <div id="stats" class="stats-counter"></div>
                 <div id="list" class="club-list"></div>
                 
-                <button id="reset" class="btn-reset">Réinitialiser</button>
+                <button id="reset" class="btn-reset">Réinitialiser tout</button>
             </div>
         </aside>
 
