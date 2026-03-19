@@ -13,11 +13,9 @@ Reproduction interdite sans autorisation.
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,8 +25,11 @@ Reproduction interdite sans autorisation.
 
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h1>Tir à l'Arc</h1>
-                <p>Pays de la Loire</p>
+                <img src="assets/Unknown.png" alt="Logo Région" class="sidebar-logo">
+                <div>
+                    <h1>Tir à l'Arc</h1>
+                    <p>Pays de la Loire</p>
+                </div>
             </div>
 
             <div class="filters-area">
@@ -53,56 +54,50 @@ Reproduction interdite sans autorisation.
                     </select>
                     <select id="coachLevel">
                         <option value="">Entraîneurs</option>
-                        <option value="DE">DE / DESJPS</option>
-                        <option value="CQP">CQP</option>
-                        <option value="Entraîneur 2">Entraîneur 2</option>
-                        <option value="Entraîneur 1">Entraîneur 1</option>
                     </select>
                 </div>
                 
                 <div class="grid-2">
-                    <select id="practice" style="grid-column: span 1;">
-                        <option value="">Pratiques</option>
-                        <option value="Tir en extérieur">Extérieur</option>
-                        <option value="Tir en salle">Salle</option>
-                        <option value="Tir en campagne">Campagne</option>
-                        <option value="Tir 3D">3D / Nature</option>
+                    <select id="practice">
+                        <option value="">Toutes les pratiques</option>
+                        <option value="Tir à l’arc exterieur">Tir à l’arc exterieur</option>
+                        <option value="Tir à 18m">Tir à 18m</option>
+                        <option value="Para">Para</option>
+                        <option value="Beursault">Beursault</option>
+                        <option value="3D">3D</option>
+                        <option value="Campagne">Campagne</option>
+                        <option value="Nature">Nature</option>
+                        <option value="Loisirs">Loisirs</option>
+                        <option value="Run archery">Run archery</option>
                     </select>
-                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600;">
+                    <div class="checkbox-simple">
                         <input type="checkbox" id="clusterToggle"> 
                         <label for="clusterToggle">Grouper</label>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 15px; margin-top: 10px; padding: 10px; background: #f1f5f9; border-radius: 8px;">
-                    <label style="display: flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">
-                        <input type="checkbox" id="checkJeunes"> Section Jeunes
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">
-                        <input type="checkbox" id="checkArbitre"> Avec Arbitre
-                    </label>
+                <div class="checkbox-row">
+                    <label><input type="checkbox" id="checkJeunes"> Section Jeunes</label>
+                    <label><input type="checkbox" id="checkArbitre"> Avec Arbitre</label>
                 </div>
 
                 <button class="btn-reset" onclick="location.reload()">Réinitialiser tout</button>
 
-                <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee;">
+                <hr class="separator">
 
                 <div id="stats" class="stats-counter">Chargement...</div>
                 
                 <div class="filter-section-title">Top 10 clubs (Licenciés)</div>
-                <div id="list" class="club-list">
-                    </div>
+                <div id="list" class="club-list"></div>
             </div>
         </aside>
     </div>
 
     <div id="overlay" class="overlay"></div>
-    
     <button id="panelBtn" class="mobile-toggle-bar">📊 Liste & Filtres</button>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    
     <script src="app.js"></script>
 </body>
   <footer>
