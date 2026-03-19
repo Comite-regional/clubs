@@ -9,32 +9,36 @@ Reproduction interdite sans autorisation.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Observatoire Tir à l'Arc — PDL</title>
+    <title>Cartographie Tir à l'Arc - Pays de la Loire</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="main-container">
         <div id="map"></div>
-        <div id="overlay" class="overlay"></div>
-        
+
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h1>Tir à l'Arc</h1>
                 <p>Pays de la Loire</p>
             </div>
-            
+
             <div class="filters-area">
                 <div class="filter-section-title">Recherche (Nom, Ville, CP)</div>
                 <div class="search-wrapper">
                     <input type="text" id="search" placeholder="Ex: Nantes, Guérande...">
-                    <button id="searchValidate">🔍</button>
+                    <button id="searchValidate"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div class="filter-section-title">Mode d'analyse Carte</div>
+                <div class="filter-section-title">Mode d'analyse carte</div>
                 <div class="mode-tabs">
                     <button class="segBtn active" data-mode="licences">Effectifs</button>
                     <button class="segBtn" data-mode="femmes">% Femmes</button>
@@ -42,30 +46,63 @@ Reproduction interdite sans autorisation.
                     <button class="segBtn" data-mode="jeunes">% Jeunes</button>
                 </div>
 
-                <div class="filter-section-title">Filtres avancés</div>
+                <div class="filter-section-title">Filtres Avancés</div>
                 <div class="grid-2">
-                    <select id="dept"><option value="">Département</option></select>
-                    <select id="coachLevel"><option value="">Entraîneurs</option></select>
+                    <select id="dept">
+                        <option value="">Département</option>
+                    </select>
+                    <select id="coachLevel">
+                        <option value="">Entraîneurs</option>
+                        <option value="DE">DE / DESJPS</option>
+                        <option value="CQP">CQP</option>
+                        <option value="Entraîneur 2">Entraîneur 2</option>
+                        <option value="Entraîneur 1">Entraîneur 1</option>
+                    </select>
                 </div>
+                
                 <div class="grid-2">
-                    <select id="practice"><option value="">Pratiques</option></select>
-                    <div class="toggle-wrap">
-                        <input type="checkbox" id="clusterToggle"> <label for="clusterToggle">Grouper</label>
+                    <select id="practice" style="grid-column: span 1;">
+                        <option value="">Pratiques</option>
+                        <option value="Tir en extérieur">Extérieur</option>
+                        <option value="Tir en salle">Salle</option>
+                        <option value="Tir en campagne">Campagne</option>
+                        <option value="Tir 3D">3D / Nature</option>
+                    </select>
+                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600;">
+                        <input type="checkbox" id="clusterToggle"> 
+                        <label for="clusterToggle">Grouper</label>
                     </div>
                 </div>
 
-                <div id="stats" class="stats-counter"></div>
-                <div id="list" class="club-list"></div>
+                <div style="display: flex; gap: 15px; margin-top: 10px; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                    <label style="display: flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">
+                        <input type="checkbox" id="checkJeunes"> Section Jeunes
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">
+                        <input type="checkbox" id="checkArbitre"> Avec Arbitre
+                    </label>
+                </div>
+
+                <button class="btn-reset" onclick="location.reload()">Réinitialiser tout</button>
+
+                <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee;">
+
+                <div id="stats" class="stats-counter">Chargement...</div>
                 
-                <button id="reset" class="btn-reset">Réinitialiser tout</button>
+                <div class="filter-section-title">Top 10 clubs (Licenciés)</div>
+                <div id="list" class="club-list">
+                    </div>
             </div>
         </aside>
-
-        <button id="panelBtn" class="mobile-toggle-bar">📊 Liste & Filtres</button>
     </div>
+
+    <div id="overlay" class="overlay"></div>
+    
+    <button id="panelBtn" class="mobile-toggle-bar">📊 Liste & Filtres</button>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
     <script src="app.js"></script>
 </body>
   <footer>
