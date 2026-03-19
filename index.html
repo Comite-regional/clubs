@@ -10,93 +10,61 @@ Reproduction interdite sans autorisation.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Observatoire Tir à l'Arc — Pays de la Loire</title>
-    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    
     <link rel="stylesheet" href="styles.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="main-container">
         <div id="map"></div>
-        
         <div id="overlay" class="overlay"></div>
         
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <img src="assets/logo_cr_pdl.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);">
-                    <div>
-                        <h1>Tir à l'Arc</h1>
-                        <p>Pays de la Loire</p>
-                    </div>
-                </div>
+                <h1>Tir à l'Arc</h1>
+                <p>Pays de la Loire</p>
             </div>
             
             <div class="filters-area">
                 <div class="filter-section-title">Recherche rapide</div>
-                <div class="search-wrapper">
-                    <input type="text" id="search" placeholder="Nom du club, ville, président...">
+                <div class="search-wrapper" style="display: flex; gap: 5px;">
+                    <input type="text" id="search" placeholder="Nom, Ville, CP..." style="flex: 1;">
+                    <button id="searchValidate" style="background: var(--primary); border: none; border-radius: 8px; color: white; padding: 0 15px; cursor: pointer;">🔍</button>
                 </div>
 
-                <div class="filter-section-title">Mode d'analyse</div>
+                <div class="filter-section-title">Mode d'analyse (Carte)</div>
                 <div class="mode-tabs">
                     <button class="segBtn active" data-mode="licences">Effectifs</button>
                     <button class="segBtn" data-mode="femmes">% Femmes</button>
                     <button class="segBtn" data-mode="para">% Para</button>
-                    <button class="segBtn" data-mode="jcomp">% Jeunes</button>
-                </div>
+                    <button class="segBtn" data-mode="jeunes">% Jeunes</button> </div>
 
-                <div class="filter-section-title">Filtres géographiques & techniques</div>
+                <div class="filter-section-title">Filtres techniques</div>
                 <div class="grid-2">
-                    <select id="dept">
-                        <option value="">Département</option>
-                    </select>
-                    <select id="coachLevel">
-                        <option value="">Diplôme (Entraîneur)</option>
-                    </select>
+                    <select id="dept"><option value="">Département</option></select>
+                    <select id="coachLevel"><option value="">Diplôme Entraîneur</option></select>
                 </div>
 
                 <div class="grid-2">
-                    <select id="practice">
-                        <option value="">Pratique</option>
-                    </select>
+                    <select id="practice"><option value="">Pratique spécifique</option></select>
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <input type="checkbox" id="clusterToggle">
                         <label for="clusterToggle" style="font-size: 11px; font-weight: 600;">Grouper</label>
                     </div>
                 </div>
 
-                <div class="checkbox-group" style="margin-top: 15px; display: flex; gap: 15px;">
-                    <label style="font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="checkbox" id="onlyYouth"> Section Jeunes
-                    </label>
-                    <label style="font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="checkbox" id="onlyRef"> Avec Arbitre
-                    </label>
-                </div>
-
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-                <div id="stats"></div>
+                <div id="stats" style="margin: 15px 0; font-weight: bold; color: var(--primary);"></div>
+                <div id="list" class="club-list"></div>
                 
-                <div id="list" class="club-list">
-                    </div>
-                
-                <button id="reset" class="btn-reset" style="margin-top: 20px; width: 100%; padding: 12px; border: none; border-radius: 8px; background: #f1f5f9; color: #475569; font-weight: bold; cursor: pointer;">
-                    Réinitialiser tous les filtres
-                </button>
+                <button id="reset" class="btn-reset">Réinitialiser</button>
             </div>
         </aside>
 
         <button id="panelBtn" class="mobile-toggle-bar">📊 Liste & Filtres</button>
     </div>
-
-    <div id="legend" class="map-legend" style="position: absolute; bottom: 30px; right: 430px; z-index: 500; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 12px; font-weight: 600;"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
