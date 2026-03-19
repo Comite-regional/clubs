@@ -61,7 +61,7 @@ function makePopupHtml(c) {
                 <div style="font-size:16px; font-weight:900; color:#166534;">${Math.round(c.pourcentage_jeunes || 0)}%</div>
             </div>
             <div style="background:#fff7ed; padding:8px; border-radius:10px; text-align:center; border:1px solid #ffedd5;">
-                <div style="font-size:8px; font-weight:800; color:#9a3412;">COMPÉTITEURS</div>
+                <div style="font-size:8px; font-weight:800; color:#9a3412;">JEUNES COMPÉTITEURS</div>
                 <div style="font-size:16px; font-weight:900; color:#9a3412;">${Math.round(c.pct_jeunes_competiteurs_18m || 0)}%</div>
             </div>
         </div>
