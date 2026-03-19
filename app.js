@@ -9,55 +9,77 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
   "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
 }[c]));
 
-/** 2. RENDU VISUEL **/
+/** 2. RENDU DU POPUP (STYLE DASHBOARD) **/
 
-function labelBadge(label){
-  if(!label) return "";
-  const key = String(label).toLowerCase();
-  return `<img src="assets/label_${key}.png" style="height: 20px; margin-left: 5px; vertical-align: middle;" onerror="this.style.display='none'"/>`;
-}
-
-function pieSvg(pct, color = "#2563eb", size = 40){
-  const p = Math.max(0, Math.min(100, Number(pct||0)));
-  const r = 22, c = 2 * Math.PI * r;
-  const filled = c * (p/100);
-  return `<svg viewBox="0 0 56 56" width="${size}" height="${size}" style="display:block"><circle cx="28" cy="28" r="22" fill="none" stroke="#e2e8f0" stroke-width="8"></circle><circle cx="28" cy="28" r="22" fill="none" stroke="${color}" stroke-width="8" stroke-linecap="round" stroke-dasharray="${filled} ${c-filled}" transform="rotate(-90 28 28)"></circle><text x="28" y="32" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">${Math.round(p)}%</text></svg>`;
+function pieSvg(pct, color = "#2563eb", size = 120) {
+    const p = Math.max(0, Math.min(100, Number(pct||0)));
+    const r = 40, c = 2 * Math.PI * r;
+    const filled = c * (p/100);
+    return `
+    <svg viewBox="0 0 100 100" width="${size}" height="${size}">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#f1f5f9" stroke-width="12"></circle>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="${color}" stroke-width="12"
+            stroke-linecap="round" stroke-dasharray="${filled} ${c-filled}" transform="rotate(-90 50 50)"></circle>
+        <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="800" fill="#1e293b">${Math.round(p)}%</text>
+    </svg>`;
 }
 
 function makePopupHtml(c) {
-    const listE = c.entraineurs && c.entraineurs.length ? c.entraineurs.map(e => `• ${esc(e.nom)}`).join("<br>") : "Aucun";
-    return `<div style="width: 250px; font-family: sans-serif;">
-        <div style="font-weight:bold; border-bottom:1px solid #eee; padding-bottom:5px; margin-bottom:5px;">${esc(c.nom)} ${labelBadge(c.label_club)}</div>
-        <div style="font-size:11px; color:#666; margin-bottom:10px;">${esc(c.ville)} • Prés : ${esc(c.president || 'N/C')}</div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; margin-bottom:10px;">
-            <div style="background:#f1f5f9; padding:5px; border-radius:4px; text-align:center;">
-                <div style="font-size:9px;">TOTAL</div><div style="font-weight:bold;">${c.licences_total}</div>
+    const color = (displayMode === "femmes") ? "#ec4899" : (displayMode === "para" ? "#10b981" : "#2563eb");
+    const val = (displayMode === "femmes") ? c.pct_femmes : (displayMode === "para" ? c.pct_para : c.pourcentage_jeunes);
+    
+    return `
+    <div style="width: 450px; font-family: 'Inter', sans-serif; padding: 10px;">
+        <div style="text-align:center; margin-bottom:15px;">
+            <h2 style="margin:0; font-size:18px; text-transform:uppercase;">${esc(c.nom)}</h2>
+            <img src="${c.logo_url || 'assets/logo_placeholder.svg'}" style="max-width:100%; height:80px; margin:10px 0; object-fit:contain;">
+            <div style="font-size:12px; font-weight:bold;">Président : ${esc(c.president || 'Non renseigné')}</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px;">
+            <div style="flex:1; background:#f8fafc; padding:10px; border-radius:8px; text-align:center;">
+                <div style="font-size:10px; color:#64748b;">TOTAL</div>
+                <div style="font-size:18px; font-weight:bold;">${c.licences_total}</div>
             </div>
-            <div style="background:#f1f5f9; padding:5px; border-radius:4px; text-align:center;">
-                <div style="font-size:9px;">JEUNES</div><div style="font-weight:bold;">${Math.round(c.pourcentage_jeunes)}%</div>
+            <div style="flex:1; background:#f8fafc; padding:10px; border-radius:8px; text-align:center;">
+                <div style="font-size:10px; color:#64748b;">JEUNES</div>
+                <div style="font-size:18px; font-weight:bold;">${Math.round(c.pourcentage_jeunes)}%</div>
+            </div>
+            <div style="flex:1; background:#f8fafc; padding:10px; border-radius:8px; text-align:center;">
+                <div style="font-size:10px; color:#64748b;">PARA</div>
+                <div style="font-size:18px; font-weight:bold;">${(c.pct_para || 0).toFixed(1)}%</div>
             </div>
         </div>
-        <div style="font-size:11px; background:#fafafa; padding:5px; border-radius:4px; border:1px solid #eee;">
-            <strong>Staff :</strong><br>${listE}
+
+        <div style="text-align:center; background:#f1f7ff; padding:20px; border-radius:12px;">
+            <div style="font-size:11px; font-weight:bold; color:#2563eb; text-transform:uppercase; margin-bottom:10px;">${displayMode.toUpperCase()}</div>
+            ${pieSvg(val, color)}
         </div>
-        <div style="margin-top:10px; text-align:center;"><a href="mailto:${esc(c.email)}" style="color:#2563eb; font-weight:bold; text-decoration:none;">✉ Contacter</a></div>
     </div>`;
 }
 
-/** 3. LOGIQUE **/
+/** 3. FILTRAGE AVANCÉ **/
 
 function applyFilters(){
     const q = document.getElementById("search")?.value.toLowerCase().trim() || "";
     const dept = document.getElementById("dept")?.value || "";
     const practice = document.getElementById("practice")?.value || "";
     const coach = document.getElementById("coachLevel")?.value || "";
+    
+    // Nouveaux filtres checkbox
+    const onlyJeunes = document.getElementById("checkJeunes")?.checked;
+    const withArbitre = document.getElementById("checkArbitre")?.checked;
 
     filtered = clubs.filter(c => {
-        const matchSearch = !q || `${c.nom} ${c.ville} ${c.cp}`.toLowerCase().includes(q);
-        const matchDept = !dept || c.departement === dept;
-        const matchPrac = !practice || (c.pratiques && c.pratiques.includes(practice));
-        const matchCoach = !coach || (c.niveaux_entraineurs && c.niveaux_entraineurs.some(n => n.niveau === coach));
-        return matchSearch && matchDept && matchPrac && matchCoach;
+        const okSearch = !q || `${c.nom} ${c.ville} ${c.cp}`.toLowerCase().includes(q);
+        const okDept = !dept || c.departement === dept;
+        const okPrac = !practice || (c.pratiques && c.pratiques.includes(practice));
+        const okCoach = !coach || (c.niveaux_entraineurs && c.niveaux_entraineurs.some(n => n.niveau === coach));
+        
+        const okJeunes = !onlyJeunes || (c.pourcentage_jeunes > 0);
+        const okArbitre = !withArbitre || (c.arbitres && c.arbitres.length > 0);
+
+        return okSearch && okDept && okPrac && okCoach && okJeunes && okArbitre;
     });
     renderAll();
 }
@@ -69,25 +91,35 @@ function renderAll(){
     plainLayer.clearLayers();
     
     filtered.forEach(c => {
-        if(!c.lat || !c.lng) return;
         const color = (displayMode === "femmes") ? "#ec4899" : (displayMode === "para" ? "#10b981" : (displayMode === "jeunes" ? "#3b82f6" : "#2563eb"));
-        let m;
-        if (displayMode === "licences") {
-            const radius = 8 + Math.sqrt(c.licences_total) * 1.5;
-            m = L.circleMarker([c.lat, c.lng], { radius, color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.8 });
-        } else {
-            const pct = (displayMode === "femmes") ? (c.pct_femmes||0) : (displayMode === "para" ? (c.pct_para||0) : (c.pourcentage_jeunes||0));
-            const icon = L.divIcon({ html: `<div style="transform:translate(-20px,-20px)">${pieSvg(pct, color, 40)}</div>`, className: '', iconSize: [40, 40] });
-            m = L.marker([c.lat, c.lng], { icon });
-        }
-        m.bindPopup(makePopupHtml(c));
+        const radius = 6 + Math.sqrt(c.licences_total) * 1.8;
+        
+        const m = L.circleMarker([c.lat, c.lng], {
+            radius: radius, color: "#fff", weight: 2, fillColor: color, fillOpacity: 0.8
+        });
+
+        m.bindPopup(makePopupHtml(c), { maxWidth: 500 });
+        
         if(isClustered && displayMode === "licences") clustersLayer.addLayer(m);
         else plainLayer.addLayer(m);
     });
 
-    const st = document.getElementById("stats");
-    if(st) st.innerHTML = `<strong>${filtered.length}</strong> clubs affichés`;
+    // Mise à jour de la liste latérale (TOP 10)
+    const elList = document.getElementById("list");
+    if(elList) {
+        const top = [...filtered].sort((a,b) => b.licences_total - a.licences_total).slice(0, 10);
+        elList.innerHTML = top.map(c => `
+            <div class="list-item" onclick="map.setView([${c.lat}, ${c.lng}], 13)" style="display:flex; justify-content:space-between; padding:10px; border-bottom:1px solid #eee; cursor:pointer;">
+                <div style="font-weight:bold; font-size:11px; text-transform:uppercase;">${esc(c.nom)}</div>
+                <div style="font-weight:bold; color:#2563eb;">${c.licences_total}</div>
+            </div>
+        `).join("");
+    }
+
+    document.getElementById("stats").innerHTML = `<strong>${filtered.length}</strong> clubs affichés`;
 }
+
+/** 4. INITIALISATION **/
 
 async function loadData() {
     try {
@@ -97,29 +129,36 @@ async function loadData() {
             ...c, lat: Number(c.lat), lng: Number(c.lon || c.lng),
             licences_total: Number(c.licences_total || 0),
             pourcentage_jeunes: Number(c.pourcentage_jeunes || 0),
+            pct_femmes: Number(c.pct_femmes || 0),
+            pct_para: Number(c.pct_para || 0),
             entraineurs: Array.isArray(c.entraineurs) ? c.entraineurs : [],
+            arbitres: Array.isArray(c.arbitres) ? c.arbitres : [],
             pratiques: Array.isArray(c.pratiques) ? c.pratiques : [],
             niveaux_entraineurs: Array.isArray(c.niveaux_entraineurs) ? c.niveaux_entraineurs : []
         }));
 
+        // Remplissage dynamique des menus
         const elDept = document.getElementById("dept");
         if(elDept) {
             const depts = [...new Set(clubs.map(c => c.departement))].filter(Boolean).sort();
-            elDept.innerHTML = `<option value="">Département</option>` + depts.map(d => `<option value="${d}">${d}</option>`).join("");
+            elDept.innerHTML = `<option value="">Tous départements</option>` + depts.map(d => `<option value="${d}">${d}</option>`).join("");
         }
+
         applyFilters();
-    } catch (e) { console.error("Erreur JSON:", e); }
+    } catch (e) { console.error("Erreur chargement :", e); }
 }
 
 function init() {
-    if (map) return;
     map = L.map("map", { zoomControl: false }).setView(MAP_CENTER, MAP_ZOOM);
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+    
     plainLayer = L.layerGroup().addTo(map);
     clustersLayer = L.markerClusterGroup().addTo(map);
 
+    // Événements
     document.getElementById("searchValidate").onclick = applyFilters;
-    ["dept", "practice", "coachLevel", "clusterToggle"].forEach(id => {
+    
+    ["dept", "practice", "coachLevel", "clusterToggle", "checkJeunes", "checkArbitre"].forEach(id => {
         const el = document.getElementById(id);
         if(el) el.onchange = applyFilters;
     });
@@ -137,4 +176,3 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-/** FIN DU FICHIER - RIEN NE DOIT ETRE EN DESSOUS **/
