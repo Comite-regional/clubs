@@ -17,12 +17,12 @@
     "a_arbitre": true,
     "niveaux_entraineurs": [
       {
+        "niveau": "DEJEPS",
+        "nb": 1
+      },  
+      {
         "niveau": "Entraîneur Fédéral",
         "nb": 1
-      },
-     {
-        "nom": "CADORET Franck",
-        "diplome": "DEJEPS"
       },
       
       {
@@ -68,6 +68,10 @@
       }
     ],
     "entraineurs": [
+      {
+        "nom": "CADORET Franck",
+        "diplome": "DEJEPS"
+      },
       {
         "nom": "RONDINEAU Thomas",
         "diplome": "Entraîneur Fédéral"
